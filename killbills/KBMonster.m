@@ -10,11 +10,13 @@
 
 @implementation KBMonster
 
+@synthesize sprite;
+
 +(KBMonster *) create {
     KBMonster * monster = [KBMonster alloc];
+    monster.sprite = @"monster.png";
     return monster;
 }
-
 
 -(id) init {
   return self;

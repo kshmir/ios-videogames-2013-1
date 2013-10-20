@@ -27,9 +27,14 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testCreatesValidMonster
 {
     XCTAssertNotNil([KBMonster create]);
+}
+
+- (void)testCreateSetsSprite
+{
+    XCTAssertNotNil([[KBMonster create] sprite]);
 }
 
 @end

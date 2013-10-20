@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KBMonster : NSObject
+@interface KBMonster : NSObject {
+    NSString * sprite;
+}
+@property(nonatomic, retain) NSString * sprite;
 +(KBMonster *) create;
 @end
