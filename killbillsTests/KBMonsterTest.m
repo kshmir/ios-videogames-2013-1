@@ -37,6 +37,10 @@ KBMonster * monster;
 {
     XCTAssertNotNil([monster sprite]);
 }
+- (void)testCreateSetsMovement
+{
+    XCTAssertNotNil([monster movement]);
+}
 - (void)testCreateSetsHeight
 {
     XCTAssertTrue([monster sprite].contentSize.height == [monster height]);
@@ -44,6 +48,7 @@ KBMonster * monster;
 - (void)testCreateSetsWidth
 {
     XCTAssertTrue([monster sprite].contentSize.width == [monster width]);
+    
 }
 
 -(void) testSetsPosition {

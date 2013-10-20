@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "KBGameObject.h"
+#import "KBGameMovement.h"
 
 @interface KBMonster : NSObject <KBMovingObject> {
     CCSprite * _sprite;
+    KBLinearMovement * _movement;
     double _speed;
 }
 

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "cocos2d.h"
+#import "KBGameMovement.h"
+
+@protocol KBGameMovement;
 @protocol KBGameObject <NSObject>
 
 @property(nonatomic, retain) CCSprite * sprite;
@@ -22,4 +26,6 @@
 
 @protocol KBMovingObject <KBGameObject>
 @property(nonatomic) double speed;
+@property(nonatomic, assign) NSObject<KBGameMovement> * movement;
 @end
+

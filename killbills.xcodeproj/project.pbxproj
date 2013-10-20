@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		096B39421813A71D00C12CEB /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
-		097F353D1813AEB100EBEBD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F353C1813AEB100EBEBD0 /* libPods.a */; };
+		097F35491813CB0300EBEBD0 /* KBLinearMovementTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */; };
+		097F354B1813CDC200EBEBD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F354A1813CDC200EBEBD0 /* libPods.a */; };
+		097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35511813D0CE00EBEBD0 /* KBGameMovement.m */; };
+		097F35531813D0CE00EBEBD0 /* KBGameMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35511813D0CE00EBEBD0 /* KBGameMovement.m */; };
 		09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A0E1813978E00CE346C /* HelloWorldLayer.m */; };
 		09A90A121813978E00CE346C /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A101813978E00CE346C /* IntroLayer.m */; };
 		09A90A2718139A2200CE346C /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A2118139A2200CE346C /* monster-hd.png */; };
@@ -61,6 +64,10 @@
 		097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
 		097F353C1813AEB100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		097F353F1813B27D00EBEBD0 /* KBGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameObject.h; sourceTree = "<group>"; };
+		097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBLinearMovementTest.m; sourceTree = "<group>"; };
+		097F354A1813CDC200EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F35501813D0CE00EBEBD0 /* KBGameMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameMovement.h; sourceTree = "<group>"; };
+		097F35511813D0CE00EBEBD0 /* KBGameMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBGameMovement.m; sourceTree = "<group>"; };
 		09A90A0D1813978E00CE346C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		09A90A0E1813978E00CE346C /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		09A90A0F1813978E00CE346C /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
@@ -119,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097F353D1813AEB100EBEBD0 /* libPods.a in Frameworks */,
+				097F354B1813CDC200EBEBD0 /* libPods.a in Frameworks */,
 				09B0EDCB1813A4700053357A /* XCTest.framework in Frameworks */,
 				09F531401813959800CC9665 /* UIKit.framework in Frameworks */,
 				09F5313F1813959800CC9665 /* Foundation.framework in Frameworks */,
@@ -132,6 +139,8 @@
 		097F35401813BC9200EBEBD0 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				097F35501813D0CE00EBEBD0 /* KBGameMovement.h */,
+				097F35511813D0CE00EBEBD0 /* KBGameMovement.m */,
 				09A90A4518139DE100CE346C /* KBMonster.h */,
 				09A90A4618139DE100CE346C /* KBMonster.m */,
 				097F353F1813B27D00EBEBD0 /* KBGameObject.h */,
@@ -185,6 +194,7 @@
 		09F531231813959800CC9665 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				097F354A1813CDC200EBEBD0 /* libPods.a */,
 				097F353C1813AEB100EBEBD0 /* libPods.a */,
 				097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */,
 				097F35381813AC6100EBEBD0 /* libPods.a */,
@@ -233,6 +243,7 @@
 			children = (
 				09B0EDC81813A2C10053357A /* KBMonsterTest.m */,
 				09F531441813959800CC9665 /* Supporting Files */,
+				097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */,
 			);
 			path = killbillsTests;
 			sourceTree = "<group>";
@@ -396,6 +407,7 @@
 				09A90A121813978E00CE346C /* IntroLayer.m in Sources */,
 				09A90A4718139DE100CE346C /* KBMonster.m in Sources */,
 				09F531311813959800CC9665 /* main.m in Sources */,
+				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
 				09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */,
 			);
@@ -405,6 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097F35491813CB0300EBEBD0 /* KBLinearMovementTest.m in Sources */,
+				097F35531813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
 				09B0EDC91813A2C10053357A /* KBMonsterTest.m in Sources */,
 				096B39421813A71D00C12CEB /* KBMonster.m in Sources */,
 			);

@@ -7,17 +7,23 @@
 //
 
 #import "KBMonster.h"
+#import "KBGameMovement.h"
 
 @implementation KBMonster
 
 @synthesize sprite;
 @synthesize speed;
+@synthesize movement;
 
 +(KBMonster *) create {
     KBMonster * monster = [KBMonster alloc];
     CCSprite * sprite = [CCSprite spriteWithFile:@"monster.png"];
     monster.sprite = sprite;
     return monster;
+}
+
+- (id<KBGameMovement>) movement {
+    return [KBLinearMovement alloc];
 }
 
 - (int) height {
