@@ -19,6 +19,7 @@
 
 -(void) setSpeedBetween: (double) speed andBetween: (double) topSpeed;
 
+
 +(KBMonster *) create;
 
 @end

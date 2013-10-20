@@ -16,10 +16,8 @@
 
 @property(nonatomic, retain) CCSprite * sprite;
 
--(int) height;
--(int) width;
-
--(void) setPosition: (CGSize) size;
+-(CGSize) size;
+-(CGPoint) position;
 
 @end
 
@@ -27,5 +25,7 @@
 @protocol KBMovingObject <KBGameObject>
 @property(nonatomic) double speed;
 @property(nonatomic, assign) NSObject<KBGameMovement> * movement;
+
+-(void) move:(void (^) (CCNode *)) block;
 @end
 

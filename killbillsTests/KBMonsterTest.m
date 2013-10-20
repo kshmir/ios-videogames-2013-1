@@ -43,22 +43,18 @@ KBMonster * monster;
 }
 - (void)testCreateSetsHeight
 {
-    XCTAssertTrue([monster sprite].contentSize.height == [monster height]);
+    XCTAssertTrue([monster sprite].contentSize.height == [monster size].height);
 }
 - (void)testCreateSetsWidth
 {
-    XCTAssertTrue([monster sprite].contentSize.width == [monster width]);
+    XCTAssertTrue([monster sprite].contentSize.width == [monster size].width);
     
 }
 
 -(void) testSetsPosition {
     
-    CGSize size;
-    size.height = 10;
-    size.width = 20;
-    [monster setPosition: size];
-    XCTAssertTrue(monster.sprite.position.x != 0);
-    XCTAssertTrue(monster.sprite.position.y != 0);
+    XCTAssertTrue(monster.position.x != 0);
+    XCTAssertTrue(monster.position.y != 0);
 }
 
 -(void) testSetspeed {

@@ -17,34 +17,38 @@
 
 +(KBMonster *) create {
     KBMonster * monster = [KBMonster alloc];
-    CCSprite * sprite = [CCSprite spriteWithFile:@"monster.png"];
-    monster.sprite = sprite;
+    CCSprite * sprite   = [CCSprite spriteWithFile:@"monster.png"];
+    
+    [monster setSprite: sprite];
+    [monster setMovement: [KBLinearMovement allocWithMovingObject: monster]];
+    [monster calculatePosition];
+    
     return monster;
 }
 
-- (id<KBGameMovement>) movement {
-    return [KBLinearMovement alloc];
-}
-
-- (int) height {
-    return self.sprite.contentSize.height;
-}
-
-- (int) width {
-    return self.sprite.contentSize.width;
-}
-
-- (void) setPosition: (CGSize) winSize {
-    int minY = self.height / 2;
-    int maxY = winSize.height - self.height/2;
+- (void) calculatePosition {
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    int minY = self.size.height / 2;
+    int maxY = winSize.height - self.size.height/2;
     int rangeY = maxY - minY;
     int actualY = (arc4random() % rangeY) + minY;
-    
-    self.sprite.position = ccp(winSize.width + self.width/2, actualY);
+    self.sprite.position = ccp(winSize.width + self.size.width/2, actualY);
+}
+
+- (CGPoint) position {
+    return self.sprite.position;
+}
+
+- (CGSize) size {
+    return self.sprite.contentSize;
 }
 
 -(void) setSpeedBetween: (double) paramSpeed andBetween: (double) topSpeed {
     self.speed = paramSpeed + (rand() * 1.0 / RAND_MAX) * (topSpeed - paramSpeed);
+}
+
+- (void) move:(void (^) (CCNode *)) block {
+    [self.movement run: block];
 }
 
 - (void)dealloc

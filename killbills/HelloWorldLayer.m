@@ -45,22 +45,14 @@ NSMutableArray * _projectiles;
 
 - (void) addMonster {
     KBMonster * kbmonster = [KBMonster create];
-   
-    CGSize winSize = [CCDirector sharedDirector].winSize;
     
-    [kbmonster setPosition: winSize];
-    [kbmonster setSpeedBetween:20 andBetween:60];
-    
-    [self addSprite:kbmonster];
-    
-    CCMoveTo * actionMove = [CCMoveTo actionWithDuration: winSize.width / kbmonster.speed
-                                                position: ccp(-kbmonster.width/2, kbmonster.sprite.position.y)];
-    CCCallBlockN * actionMoveDone = [CCCallBlockN actionWithBlock:^(CCNode *node) {
+    [kbmonster setSpeedBetween:50 andBetween:200];
+    [kbmonster move: ^(CCNode *node) {
         [_monsters removeObject:node];
         [node removeFromParentAndCleanup:YES];
-    }];
-    [kbmonster.sprite runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
+       }];
     
+    [self addSprite:kbmonster];
     kbmonster.sprite.tag = 1;
     [_monsters addObject:kbmonster.sprite];
     

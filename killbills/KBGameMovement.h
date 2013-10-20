@@ -13,9 +13,13 @@
 @protocol KBMovingObject;
 
 @protocol KBGameMovement <NSObject>
-- (void) move: (NSObject<KBMovingObject> *) movingObject;
+- (void) run:(void (^) (CCNode *)) block;
 @end
 
 @interface KBLinearMovement : NSObject <KBGameMovement>
+
+@property (nonatomic, retain) id<KBMovingObject> object;
+
++ (KBLinearMovement *) allocWithMovingObject: (id<KBMovingObject>) object;
 
 @end
