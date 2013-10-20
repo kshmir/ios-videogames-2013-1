@@ -46,4 +46,12 @@ KBMonster * monster;
     XCTAssertTrue([monster sprite].contentSize.width == [monster width]);
 }
 
+-(void) testSetsPosition {
+    
+    CGSize size;
+    size.height = 10;
+    size.width = 20;
+    [monster setPosition: size];
+}
+
 @end

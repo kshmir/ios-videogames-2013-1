@@ -16,7 +16,6 @@
     KBMonster * monster = [KBMonster alloc];
     CCSprite * sprite = [CCSprite spriteWithFile:@"monster.png"];
     monster.sprite = sprite;
-
     return monster;
 }
 
@@ -26,6 +25,15 @@
 
 - (int) width {
     return self.sprite.contentSize.width;
+}
+
+- (void) setPosition: (CGSize) winSize {
+    int minY = self.height / 2;
+    int maxY = winSize.height - self.height/2;
+    int rangeY = maxY - minY;
+    int actualY = (arc4random() % rangeY) + minY;
+    
+    self.sprite.position = ccp(winSize.width + self.width/2, actualY);
 }
 - (void)dealloc
 {

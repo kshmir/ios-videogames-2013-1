@@ -60,6 +60,7 @@
 		097F35381813AC6100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
 		097F353C1813AEB100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F353F1813B27D00EBEBD0 /* KBGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameObject.h; sourceTree = "<group>"; };
 		09A90A0D1813978E00CE346C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		09A90A0E1813978E00CE346C /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		09A90A0F1813978E00CE346C /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
@@ -203,6 +204,7 @@
 				09F531341813959800CC9665 /* KBAppDelegate.m */,
 				09F531361813959800CC9665 /* Images.xcassets */,
 				09F5312B1813959800CC9665 /* Supporting Files */,
+				097F353F1813B27D00EBEBD0 /* KBGameObject.h */,
 			);
 			path = killbills;
 			sourceTree = "<group>";

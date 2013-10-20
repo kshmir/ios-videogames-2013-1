@@ -12,6 +12,8 @@
 
 // Needed to obtain the Navigation Controller
 #import "KBAppDelegate.h"
+#import "KBMonster.h"
+#import "KBGameObject.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -37,21 +39,16 @@ NSMutableArray * _projectiles;
 	return scene;
 }
 
+- (void) addSprite: (id<KBGameObject>) content {
+    [self addChild: [content sprite]];
+}
+
 - (void) addMonster {
-    
-    CCSprite * monster = [CCSprite spriteWithFile:@"monster.png"];
-    
-    // Determine where to spawn the monster along the Y axis
+   
+    KBMonster * kbmonster = [KBMonster create];
     CGSize winSize = [CCDirector sharedDirector].winSize;
-    int minY = monster.contentSize.height / 2;
-    int maxY = winSize.height - monster.contentSize.height/2;
-    int rangeY = maxY - minY;
-    int actualY = (arc4random() % rangeY) + minY;
-    
-    // Create the monster slightly off-screen along the right edge,
-    // and along a random position along the Y axis as calculated above
-    monster.position = ccp(winSize.width + monster.contentSize.width/2, actualY);
-    [self addChild:monster];
+    [kbmonster setPosition:winSize];
+    [self addSprite:kbmonster];
     
     // Determine speed of the monster
     int minDuration = 2.0;
@@ -61,15 +58,15 @@ NSMutableArray * _projectiles;
     
     // Create the actions
     CCMoveTo * actionMove = [CCMoveTo actionWithDuration:actualDuration
-                                                position:ccp(-monster.contentSize.width/2, actualY)];
+                                                position:ccp(-kbmonster.width/2, kbmonster.sprite.position.y)];
     CCCallBlockN * actionMoveDone = [CCCallBlockN actionWithBlock:^(CCNode *node) {
         [_monsters removeObject:node];
         [node removeFromParentAndCleanup:YES];
     }];
-    [monster runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
+    [kbmonster.sprite runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
     
-    monster.tag = 1;
-    [_monsters addObject:monster];
+    kbmonster.sprite.tag = 1;
+    [_monsters addObject:kbmonster.sprite];
     
 }
 

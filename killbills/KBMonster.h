@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "KBGameObject.h"
 
-@interface KBMonster : NSObject {
+@interface KBMonster : NSObject <KBGameObject> {
     CCSprite * sprite;
 }
 
@@ -17,6 +18,8 @@
 
 -(int) height;
 -(int) width;
+
+-(void) setPosition: (CGSize) size;
 
 +(KBMonster *) create;
 
