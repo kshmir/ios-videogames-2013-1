@@ -31,8 +31,10 @@
 		09A90A4018139A3800CE346C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A3618139A3800CE346C /* Icon.png */; };
 		09A90A4118139A3800CE346C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A3718139A3800CE346C /* Icon@2x.png */; };
 		09A90A4718139DE100CE346C /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
-		09B0EDC91813A2C10053357A /* KBMonsterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B0EDC81813A2C10053357A /* KBMonsterTest.m */; };
+		09B0EDC91813A2C10053357A /* KBMovingObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B0EDC81813A2C10053357A /* KBMovingObjectTest.m */; };
 		09B0EDCB1813A4700053357A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B0EDCA1813A4700053357A /* XCTest.framework */; };
+		09D43A7818143B790042CD21 /* KBProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D43A7718143B790042CD21 /* KBProjectile.m */; };
+		09D43A7918143B790042CD21 /* KBProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D43A7718143B790042CD21 /* KBProjectile.m */; };
 		09F531251813959800CC9665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
 		09F531271813959800CC9665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531261813959800CC9665 /* CoreGraphics.framework */; };
 		09F531291813959800CC9665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531281813959800CC9665 /* UIKit.framework */; };
@@ -65,7 +67,7 @@
 		097F353C1813AEB100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		097F353F1813B27D00EBEBD0 /* KBGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameObject.h; sourceTree = "<group>"; };
 		097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBLinearMovementTest.m; sourceTree = "<group>"; };
-		097F354A1813CDC200EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F354A1813CDC200EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		097F35501813D0CE00EBEBD0 /* KBGameMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameMovement.h; sourceTree = "<group>"; };
 		097F35511813D0CE00EBEBD0 /* KBGameMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBGameMovement.m; sourceTree = "<group>"; };
 		09A90A0D1813978E00CE346C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
@@ -90,8 +92,10 @@
 		09A90A3718139A3800CE346C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		09A90A4518139DE100CE346C /* KBMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBMonster.h; sourceTree = "<group>"; };
 		09A90A4618139DE100CE346C /* KBMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBMonster.m; sourceTree = "<group>"; };
-		09B0EDC81813A2C10053357A /* KBMonsterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBMonsterTest.m; sourceTree = "<group>"; };
+		09B0EDC81813A2C10053357A /* KBMovingObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBMovingObjectTest.m; sourceTree = "<group>"; };
 		09B0EDCA1813A4700053357A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		09D43A7618143B790042CD21 /* KBProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBProjectile.h; sourceTree = "<group>"; };
+		09D43A7718143B790042CD21 /* KBProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBProjectile.m; sourceTree = "<group>"; };
 		09F531211813959800CC9665 /* killbills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = killbills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F531241813959800CC9665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09F531261813959800CC9665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +178,8 @@
 		09F531181813959800CC9665 = {
 			isa = PBXGroup;
 			children = (
+				09D43A7618143B790042CD21 /* KBProjectile.h */,
+				09D43A7718143B790042CD21 /* KBProjectile.m */,
 				09F5312A1813959800CC9665 /* killbills */,
 				09F531431813959800CC9665 /* killbillsTests */,
 				09F531231813959800CC9665 /* Frameworks */,
@@ -241,7 +247,7 @@
 		09F531431813959800CC9665 /* killbillsTests */ = {
 			isa = PBXGroup;
 			children = (
-				09B0EDC81813A2C10053357A /* KBMonsterTest.m */,
+				09B0EDC81813A2C10053357A /* KBMovingObjectTest.m */,
 				09F531441813959800CC9665 /* Supporting Files */,
 				097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */,
 			);
@@ -410,6 +416,7 @@
 				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
 				09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */,
+				09D43A7818143B790042CD21 /* KBProjectile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +426,8 @@
 			files = (
 				097F35491813CB0300EBEBD0 /* KBLinearMovementTest.m in Sources */,
 				097F35531813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
-				09B0EDC91813A2C10053357A /* KBMonsterTest.m in Sources */,
+				09D43A7918143B790042CD21 /* KBProjectile.m in Sources */,
+				09B0EDC91813A2C10053357A /* KBMovingObjectTest.m in Sources */,
 				096B39421813A71D00C12CEB /* KBMonster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

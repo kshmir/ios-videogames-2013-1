@@ -39,7 +39,7 @@ NSMutableArray * _projectiles;
 	return scene;
 }
 
-- (void) addSprite: (id<KBGameObject>) content {
+- (void) addObject: (id<KBGameObject>) content {
     [self addChild: [content sprite]];
 }
 
@@ -52,8 +52,8 @@ NSMutableArray * _projectiles;
         [node removeFromParentAndCleanup:YES];
        }];
     
-    [self addSprite:kbmonster];
-    kbmonster.sprite.tag = 1;
+    [self addObject:kbmonster];
+    
     [_monsters addObject:kbmonster.sprite];
     
 }
@@ -94,7 +94,6 @@ NSMutableArray * _projectiles;
     float velocity = 480/1; // 480pixels/1sec
     float realMoveDuration = length/velocity;
     
-    projectile.tag = 2;
     [_projectiles addObject:projectile];
     
     // Move projectile to actual endpoint
