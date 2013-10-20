@@ -15,13 +15,7 @@
     double _speed;
 }
 
-@property(nonatomic, retain) CCSprite * sprite;
-
-@property(nonatomic) double speed;
--(int) height;
--(int) width;
-
--(void) setPosition: (CGSize) size;
+-(void) setSpeedBetween: (double) speed andBetween: (double) topSpeed;
 
 +(KBMonster *) create;
 

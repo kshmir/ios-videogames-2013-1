@@ -57,7 +57,9 @@ KBMonster * monster;
 }
 
 -(void) testSetspeed {
-    XCTAssertNoThrow(monster.speed = 1);
+    [monster setSpeedBetween:0.1 andBetween:0.2];
+    XCTAssertTrue(monster.speed >= 0.1);
+    XCTAssertTrue(monster.speed <= 0.2);
 }
 
 @end

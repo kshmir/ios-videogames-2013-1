@@ -49,13 +49,12 @@ NSMutableArray * _projectiles;
     CGSize winSize =[CCDirector sharedDirector].winSize;
     
     [kbmonster setPosition: winSize];
-    [kbmonster setSpeed: ((2.0 + arc4random() % (int) 4.0) / winSize.width)];
-    NSLog(@"%g",kbmonster.speed);
+    [kbmonster setSpeedBetween:20 andBetween:60];
     
     [self addSprite:kbmonster];
     
     // Create the actions
-    CCMoveTo * actionMove = [CCMoveTo actionWithDuration: kbmonster.speed * winSize.width
+    CCMoveTo * actionMove = [CCMoveTo actionWithDuration: winSize.width / kbmonster.speed
                                                 position:ccp(-kbmonster.width/2, kbmonster.sprite.position.y)];
     CCCallBlockN * actionMoveDone = [CCCallBlockN actionWithBlock:^(CCNode *node) {
         [_monsters removeObject:node];

@@ -36,6 +36,11 @@
     
     self.sprite.position = ccp(winSize.width + self.width/2, actualY);
 }
+
+-(void) setSpeedBetween: (double) paramSpeed andBetween: (double) topSpeed {
+    self.speed = paramSpeed + (rand() * 1.0 / RAND_MAX) * (topSpeed - paramSpeed);
+}
+
 - (void)dealloc
 {
     [self.sprite dealloc];

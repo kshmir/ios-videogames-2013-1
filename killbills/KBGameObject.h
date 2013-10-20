@@ -21,5 +21,5 @@
 
 
 @protocol KBMovingObject <KBGameObject>
-@property(nonatomic) float speed;
+@property(nonatomic) double speed;
 @end
