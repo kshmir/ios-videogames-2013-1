@@ -36,5 +36,10 @@
 {
     XCTAssertNotNil([[KBMonster create] sprite]);
 }
+- (void)testCreateSetsHeight
+{
+    KBMonster * monster = [KBMonster create];
+    XCTAssertTrue([monster sprite].contentSize.height == [monster height]);
+}
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		096B39421813A71D00C12CEB /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
+		097F353D1813AEB100EBEBD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F353C1813AEB100EBEBD0 /* libPods.a */; };
 		09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A0E1813978E00CE346C /* HelloWorldLayer.m */; };
 		09A90A121813978E00CE346C /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A101813978E00CE346C /* IntroLayer.m */; };
 		09A90A2718139A2200CE346C /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A2118139A2200CE346C /* monster-hd.png */; };
@@ -53,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		096B39431813AB2400C12CEB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		096B39451813AB3400C12CEB /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
+		096B39471813AC2B00C12CEB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F35381813AC6100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
+		097F353C1813AEB100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		09A90A0D1813978E00CE346C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		09A90A0E1813978E00CE346C /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		09A90A0F1813978E00CE346C /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097F353D1813AEB100EBEBD0 /* libPods.a in Frameworks */,
 				09B0EDCB1813A4700053357A /* XCTest.framework in Frameworks */,
 				09F531401813959800CC9665 /* UIKit.framework in Frameworks */,
 				09F5313F1813959800CC9665 /* Foundation.framework in Frameworks */,
@@ -160,6 +168,12 @@
 		09F531231813959800CC9665 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				097F353C1813AEB100EBEBD0 /* libPods.a */,
+				097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */,
+				097F35381813AC6100EBEBD0 /* libPods.a */,
+				096B39471813AC2B00C12CEB /* libPods.a */,
+				096B39451813AB3400C12CEB /* libPods-cocos2d.a */,
+				096B39431813AB2400C12CEB /* libPods.a */,
 				09B0EDCA1813A4700053357A /* XCTest.framework */,
 				09F531241813959800CC9665 /* Foundation.framework */,
 				09F531261813959800CC9665 /* CoreGraphics.framework */,
@@ -435,6 +449,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -452,7 +467,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos7.0;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -475,7 +490,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_NS_ASSERTIONS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -487,7 +502,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos7.0;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -530,7 +545,7 @@
 		09F531511813959800CC9665 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/killbills.app/killbills";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -543,7 +558,16 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SRCROOT}/Pods/Headers/**",
+				);
 				INFOPLIST_FILE = "killbillsTests/killbillsTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cris/src/itba/killbills/killbills/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -553,7 +577,7 @@
 		09F531521813959800CC9665 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/killbills.app/killbills";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -562,7 +586,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "killbills/killbills-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SRCROOT}/Pods/Headers/**",
+				);
 				INFOPLIST_FILE = "killbillsTests/killbillsTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cris/src/itba/killbills/killbills/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

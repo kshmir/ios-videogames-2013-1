@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @interface KBMonster : NSObject {
-    NSString * sprite;
+    CCSprite * sprite;
 }
-@property(nonatomic, retain) NSString * sprite;
+
+@property(nonatomic, retain) CCSprite * sprite;
+
+-(int) height;
+-(int) width;
+
 +(KBMonster *) create;
+
 @end

@@ -14,10 +14,24 @@
 
 +(KBMonster *) create {
     KBMonster * monster = [KBMonster alloc];
-    monster.sprite = @"monster.png";
+    CCSprite * sprite = [CCSprite spriteWithFile:@"monster.png"];
+    monster.sprite = sprite;
+
     return monster;
 }
 
+- (int) height {
+    return self.sprite.contentSize.height;
+}
+
+- (int) width {
+    return self.sprite.contentSize.width;
+}
+- (void)dealloc
+{
+    [sprite dealloc];
+    [super dealloc];
+}
 -(id) init {
   return self;
 }
