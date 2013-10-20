@@ -11,6 +11,7 @@
 @implementation KBMonster
 
 @synthesize sprite;
+@synthesize speed;
 
 +(KBMonster *) create {
     KBMonster * monster = [KBMonster alloc];
@@ -37,7 +38,7 @@
 }
 - (void)dealloc
 {
-    [sprite dealloc];
+    [self.sprite dealloc];
     [super dealloc];
 }
 -(id) init {

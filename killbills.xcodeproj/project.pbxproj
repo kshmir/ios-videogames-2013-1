@@ -57,9 +57,9 @@
 		096B39431813AB2400C12CEB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		096B39451813AB3400C12CEB /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
 		096B39471813AC2B00C12CEB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
-		097F35381813AC6100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
-		097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
-		097F353C1813AEB100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F35381813AC6100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		097F353A1813AC6400EBEBD0 /* libPods-cocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-cocos2d.a"; path = "Pods/build/Debug-iphoneos/libPods-cocos2d.a"; sourceTree = "<group>"; };
+		097F353C1813AEB100EBEBD0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		097F353F1813B27D00EBEBD0 /* KBGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameObject.h; sourceTree = "<group>"; };
 		09A90A0D1813978E00CE346C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		09A90A0E1813978E00CE346C /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
@@ -129,9 +129,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		097F35401813BC9200EBEBD0 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				09A90A4518139DE100CE346C /* KBMonster.h */,
+				09A90A4618139DE100CE346C /* KBMonster.m */,
+				097F353F1813B27D00EBEBD0 /* KBGameObject.h */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		09A90A2D18139A2B00CE346C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09A90A2118139A2200CE346C /* monster-hd.png */,
+				09A90A2218139A2200CE346C /* monster.png */,
+				09A90A2318139A2200CE346C /* player-hd.png */,
+				09A90A2418139A2200CE346C /* player.png */,
+				09A90A2518139A2200CE346C /* projectile-hd.png */,
+				09A90A2618139A2200CE346C /* projectile.png */,
 				09A90A2E18139A3800CE346C /* Default-568h@2x.png */,
 				09A90A2F18139A3800CE346C /* Default-Landscape~ipad.png */,
 				09A90A3018139A3800CE346C /* Default.png */,
@@ -187,15 +203,8 @@
 		09F5312A1813959800CC9665 /* killbills */ = {
 			isa = PBXGroup;
 			children = (
-				09A90A4518139DE100CE346C /* KBMonster.h */,
-				09A90A4618139DE100CE346C /* KBMonster.m */,
+				097F35401813BC9200EBEBD0 /* Game */,
 				09A90A2D18139A2B00CE346C /* Resources */,
-				09A90A2118139A2200CE346C /* monster-hd.png */,
-				09A90A2218139A2200CE346C /* monster.png */,
-				09A90A2318139A2200CE346C /* player-hd.png */,
-				09A90A2418139A2200CE346C /* player.png */,
-				09A90A2518139A2200CE346C /* projectile-hd.png */,
-				09A90A2618139A2200CE346C /* projectile.png */,
 				09A90A0D1813978E00CE346C /* HelloWorldLayer.h */,
 				09A90A0E1813978E00CE346C /* HelloWorldLayer.m */,
 				09A90A0F1813978E00CE346C /* IntroLayer.h */,
@@ -204,7 +213,6 @@
 				09F531341813959800CC9665 /* KBAppDelegate.m */,
 				09F531361813959800CC9665 /* Images.xcassets */,
 				09F5312B1813959800CC9665 /* Supporting Files */,
-				097F353F1813B27D00EBEBD0 /* KBGameObject.h */,
 			);
 			path = killbills;
 			sourceTree = "<group>";

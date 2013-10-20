@@ -52,6 +52,12 @@ KBMonster * monster;
     size.height = 10;
     size.width = 20;
     [monster setPosition: size];
+    XCTAssertTrue(monster.sprite.position.x != 0);
+    XCTAssertTrue(monster.sprite.position.y != 0);
+}
+
+-(void) testSetspeed {
+    XCTAssertNoThrow(monster.speed = 1);
 }
 
 @end

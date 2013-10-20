@@ -10,12 +10,14 @@
 #import "cocos2d.h"
 #import "KBGameObject.h"
 
-@interface KBMonster : NSObject <KBGameObject> {
-    CCSprite * sprite;
+@interface KBMonster : NSObject <KBMovingObject> {
+    CCSprite * _sprite;
+    double _speed;
 }
 
 @property(nonatomic, retain) CCSprite * sprite;
 
+@property(nonatomic) double speed;
 -(int) height;
 -(int) width;
 

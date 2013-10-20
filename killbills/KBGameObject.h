@@ -9,5 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @protocol KBGameObject <NSObject>
+
 @property(nonatomic, retain) CCSprite * sprite;
+
+-(int) height;
+-(int) width;
+
+-(void) setPosition: (CGSize) size;
+
+@end
+
+
+@protocol KBMovingObject <KBGameObject>
+@property(nonatomic) float speed;
 @end

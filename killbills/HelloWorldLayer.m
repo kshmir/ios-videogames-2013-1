@@ -44,20 +44,18 @@ NSMutableArray * _projectiles;
 }
 
 - (void) addMonster {
-   
     KBMonster * kbmonster = [KBMonster create];
-    CGSize winSize = [CCDirector sharedDirector].winSize;
-    [kbmonster setPosition:winSize];
+   
+    CGSize winSize =[CCDirector sharedDirector].winSize;
+    
+    [kbmonster setPosition: winSize];
+    [kbmonster setSpeed: ((2.0 + arc4random() % (int) 4.0) / winSize.width)];
+    NSLog(@"%g",kbmonster.speed);
+    
     [self addSprite:kbmonster];
     
-    // Determine speed of the monster
-    int minDuration = 2.0;
-    int maxDuration = 4.0;
-    int rangeDuration = maxDuration - minDuration;
-    int actualDuration = (arc4random() % rangeDuration) + minDuration;
-    
     // Create the actions
-    CCMoveTo * actionMove = [CCMoveTo actionWithDuration:actualDuration
+    CCMoveTo * actionMove = [CCMoveTo actionWithDuration: kbmonster.speed * winSize.width
                                                 position:ccp(-kbmonster.width/2, kbmonster.sprite.position.y)];
     CCCallBlockN * actionMoveDone = [CCCallBlockN actionWithBlock:^(CCNode *node) {
         [_monsters removeObject:node];
@@ -138,7 +136,7 @@ NSMutableArray * _projectiles;
         for (CCSprite *monster in monstersToDelete) {
             [_monsters removeObject:monster];
             [self removeChild:monster cleanup:YES];
-        }
+            }
         
         if (monstersToDelete.count > 0) {
             [projectilesToDelete addObject:projectile];
