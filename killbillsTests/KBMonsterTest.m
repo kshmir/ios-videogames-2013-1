@@ -15,31 +15,35 @@
 
 @implementation KBMonsterTest
 
+KBMonster * monster;
+
 - (void)setUp
 {
+    monster = [KBMonster create];
     [super setUp];
-    // Put setup code here; it will be run once, before the first test case.
 }
 
 - (void)tearDown
 {
-    // Put teardown code here; it will be run once, after the last test case.
     [super tearDown];
 }
 
 - (void)testCreatesValidMonster
 {
-    XCTAssertNotNil([KBMonster create]);
+    XCTAssertNotNil(monster);
 }
 
 - (void)testCreateSetsSprite
 {
-    XCTAssertNotNil([[KBMonster create] sprite]);
+    XCTAssertNotNil([monster sprite]);
 }
 - (void)testCreateSetsHeight
 {
-    KBMonster * monster = [KBMonster create];
     XCTAssertTrue([monster sprite].contentSize.height == [monster height]);
+}
+- (void)testCreateSetsWidth
+{
+    XCTAssertTrue([monster sprite].contentSize.width == [monster width]);
 }
 
 @end
