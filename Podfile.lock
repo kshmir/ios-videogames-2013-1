@@ -1,0 +1,12 @@
+PODS:
+  - cocos2d (2.1):
+    - cocos2d/CocosDenshion
+  - cocos2d/CocosDenshion (2.1)
+
+DEPENDENCIES:
+  - cocos2d (~> 2.1)
+
+SPEC CHECKSUMS:
+  cocos2d: 173f234c5236b90c674d087cb7b2a7babf243b13
+
+COCOAPODS: 0.26.2
