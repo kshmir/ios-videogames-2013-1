@@ -6,60 +6,31 @@
 //  Copyright (c) 2013 Cristian Pereyra. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import "SpecHelper.m"
 #import "KBMonster.h"
 
-@interface KBMovingObjectTest : XCTestCase
+SpecBegin(KBMonster)
 
-@end
-
-@implementation KBMovingObjectTest
-
-id<KBMovingObject> object;
-
-- (void)setUp
-{
-    object = [KBMonster create];
-    [super setUp];
-}
-
-- (void)tearDown
-{
-    [super tearDown];
-}
-
-- (void)testCreatesValidMonster
-{
-    XCTAssertNotNil(object);
-}
-
-- (void)testCreateSetsSprite
-{
-    XCTAssertNotNil([object sprite]);
-}
-- (void)testCreateSetsMovement
-{
-    XCTAssertNotNil([object movement]);
-}
-- (void)testCreateSetsHeight
-{
-    XCTAssertTrue([object sprite].contentSize.height == [object size].height);
-}
-- (void)testCreateSetsWidth
-{
-    XCTAssertTrue([object sprite].contentSize.width == [object size].width);
-}
-
--(void) testSetsPosition {
+describe(@"KBMonster", ^{
+    __block KBMonster *monster;
     
-    XCTAssertTrue(object.position.x != 0);
-    XCTAssertTrue(object.position.y != 0);
-}
+    beforeEach(^{
+        monster = [KBMonster create];
+    });
+    
+    it(@"should set the height and weight of the sprite it contains", ^{
+        expect([monster sprite].contentSize.height).to.equal([monster size].height);
+        expect([monster sprite].contentSize.width).to.equal([monster size].width);
+    });
+    
+    it(@"should allow to set a speed between some values", ^{
+        [monster setSpeedBetween:0.1 andBetween:0.2];
+        expect([monster speed]).to.beGreaterThanOrEqualTo(0.1);
+        expect([monster speed]).to.beGreaterThanOrEqualTo(0.2);
+    });
+    
+    itBehavesLike(@"a moving object", [NSDictionary dictionaryWithObjectsAndKeys:monster, @"movingObject", nil]);
+    itBehavesLike(@"a game object", [NSDictionary dictionaryWithObjectsAndKeys:monster, @"gameObject", nil]);
+});
 
--(void) testSetspeed {
-    [object setSpeedBetween:0.1 andBetween:0.2];
-    XCTAssertTrue(object.speed >= 0.1);
-    XCTAssertTrue(object.speed <= 0.2);
-}
-
-@end
+SpecEnd
