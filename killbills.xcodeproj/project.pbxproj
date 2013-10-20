@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		096B39421813A71D00C12CEB /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
 		09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A0E1813978E00CE346C /* HelloWorldLayer.m */; };
 		09A90A121813978E00CE346C /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A101813978E00CE346C /* IntroLayer.m */; };
 		09A90A2718139A2200CE346C /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A2118139A2200CE346C /* monster-hd.png */; };
@@ -25,6 +26,9 @@
 		09A90A3F18139A3800CE346C /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A3518139A3800CE346C /* Icon-Small@2x.png */; };
 		09A90A4018139A3800CE346C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A3618139A3800CE346C /* Icon.png */; };
 		09A90A4118139A3800CE346C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A3718139A3800CE346C /* Icon@2x.png */; };
+		09A90A4718139DE100CE346C /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
+		09B0EDC91813A2C10053357A /* KBMonsterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B0EDC81813A2C10053357A /* KBMonsterTest.m */; };
+		09B0EDCB1813A4700053357A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B0EDCA1813A4700053357A /* XCTest.framework */; };
 		09F531251813959800CC9665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
 		09F531271813959800CC9665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531261813959800CC9665 /* CoreGraphics.framework */; };
 		09F531291813959800CC9665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531281813959800CC9665 /* UIKit.framework */; };
@@ -32,16 +36,14 @@
 		09F531311813959800CC9665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531301813959800CC9665 /* main.m */; };
 		09F531351813959800CC9665 /* KBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531341813959800CC9665 /* KBAppDelegate.m */; };
 		09F531371813959800CC9665 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F531361813959800CC9665 /* Images.xcassets */; };
-		09F5313E1813959800CC9665 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F5313D1813959800CC9665 /* XCTest.framework */; };
 		09F5313F1813959800CC9665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
 		09F531401813959800CC9665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531281813959800CC9665 /* UIKit.framework */; };
 		09F531481813959800CC9665 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09F531461813959800CC9665 /* InfoPlist.strings */; };
-		09F5314A1813959800CC9665 /* killbillsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531491813959800CC9665 /* killbillsTests.m */; };
 		4F066C3774C84135A4609E83 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE83D8D9542448B9862905C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		09F531411813959800CC9665 /* PBXContainerItemProxy */ = {
+		096B39401813A68500C12CEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 09F531191813959800CC9665 /* Project object */;
 			proxyType = 1;
@@ -71,6 +73,10 @@
 		09A90A3518139A3800CE346C /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
 		09A90A3618139A3800CE346C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
 		09A90A3718139A3800CE346C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
+		09A90A4518139DE100CE346C /* KBMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBMonster.h; sourceTree = "<group>"; };
+		09A90A4618139DE100CE346C /* KBMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBMonster.m; sourceTree = "<group>"; };
+		09B0EDC81813A2C10053357A /* KBMonsterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBMonsterTest.m; sourceTree = "<group>"; };
+		09B0EDCA1813A4700053357A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		09F531211813959800CC9665 /* killbills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = killbills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F531241813959800CC9665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09F531261813959800CC9665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,10 +89,8 @@
 		09F531341813959800CC9665 /* KBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBAppDelegate.m; sourceTree = "<group>"; };
 		09F531361813959800CC9665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		09F5313C1813959800CC9665 /* killbillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = killbillsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09F5313D1813959800CC9665 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		09F531451813959800CC9665 /* killbillsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "killbillsTests-Info.plist"; sourceTree = "<group>"; };
 		09F531471813959800CC9665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		09F531491813959800CC9665 /* killbillsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = killbillsTests.m; sourceTree = "<group>"; };
 		1CA6098CE0A545CA961E96A0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3CE83D8D9542448B9862905C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F5313E1813959800CC9665 /* XCTest.framework in Frameworks */,
+				09B0EDCB1813A4700053357A /* XCTest.framework in Frameworks */,
 				09F531401813959800CC9665 /* UIKit.framework in Frameworks */,
 				09F5313F1813959800CC9665 /* Foundation.framework in Frameworks */,
 			);
@@ -156,10 +160,10 @@
 		09F531231813959800CC9665 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09B0EDCA1813A4700053357A /* XCTest.framework */,
 				09F531241813959800CC9665 /* Foundation.framework */,
 				09F531261813959800CC9665 /* CoreGraphics.framework */,
 				09F531281813959800CC9665 /* UIKit.framework */,
-				09F5313D1813959800CC9665 /* XCTest.framework */,
 				3CE83D8D9542448B9862905C /* libPods.a */,
 			);
 			name = Frameworks;
@@ -168,6 +172,8 @@
 		09F5312A1813959800CC9665 /* killbills */ = {
 			isa = PBXGroup;
 			children = (
+				09A90A4518139DE100CE346C /* KBMonster.h */,
+				09A90A4618139DE100CE346C /* KBMonster.m */,
 				09A90A2D18139A2B00CE346C /* Resources */,
 				09A90A2118139A2200CE346C /* monster-hd.png */,
 				09A90A2218139A2200CE346C /* monster.png */,
@@ -201,7 +207,7 @@
 		09F531431813959800CC9665 /* killbillsTests */ = {
 			isa = PBXGroup;
 			children = (
-				09F531491813959800CC9665 /* killbillsTests.m */,
+				09B0EDC81813A2C10053357A /* KBMonsterTest.m */,
 				09F531441813959800CC9665 /* Supporting Files */,
 			);
 			path = killbillsTests;
@@ -249,7 +255,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				09F531421813959800CC9665 /* PBXTargetDependency */,
+				096B39411813A68500C12CEB /* PBXTargetDependency */,
 			);
 			name = killbillsTests;
 			productName = killbillsTests;
@@ -364,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A90A121813978E00CE346C /* IntroLayer.m in Sources */,
+				09A90A4718139DE100CE346C /* KBMonster.m in Sources */,
 				09F531311813959800CC9665 /* main.m in Sources */,
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
 				09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */,
@@ -374,17 +381,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F5314A1813959800CC9665 /* killbillsTests.m in Sources */,
+				09B0EDC91813A2C10053357A /* KBMonsterTest.m in Sources */,
+				096B39421813A71D00C12CEB /* KBMonster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		09F531421813959800CC9665 /* PBXTargetDependency */ = {
+		096B39411813A68500C12CEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 09F531201813959800CC9665 /* killbills */;
-			targetProxy = 09F531411813959800CC9665 /* PBXContainerItemProxy */;
+			targetProxy = 096B39401813A68500C12CEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,7 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -442,8 +450,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos7.0;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -451,7 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -475,8 +484,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos7.0;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -486,6 +497,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "killbills/killbills-Prefix.pch";
 				INFOPLIST_FILE = "killbills/killbills-Info.plist";
@@ -500,6 +515,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "killbills/killbills-Prefix.pch";
 				INFOPLIST_FILE = "killbills/killbills-Info.plist";
