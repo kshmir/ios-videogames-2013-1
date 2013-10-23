@@ -18,8 +18,11 @@
 +(KBProjectile *) create {
     KBProjectile * projectile = [[KBProjectile alloc] init];
     
-    [projectile setSprite: [CCSprite spriteWithFile:@"monster.png"]];
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    [projectile setSprite: [CCSprite spriteWithFile:@"projectile.png"]];
     [projectile setMovement: [KBLinearMovement allocWithMovingObject: projectile]];
+    [[projectile sprite] setPosition: ccp(20, winSize.height/2)];
     
     return projectile;
 }

@@ -23,3 +23,12 @@
 + (KBLinearMovement *) allocWithMovingObject: (id<KBMovingObject>) object;
 
 @end
+
+@interface KBTouchMovement : NSObject <KBGameMovement>
+
+@property (nonatomic, retain) id<KBMovingObject> object;
+@property (nonatomic) CGPoint touchOffset;
+
++ (KBTouchMovement *) allocWithMovingObject: (id<KBMovingObject>) object andTouchOffset: (CGPoint) touchLocation;
+
+@end

@@ -26,7 +26,6 @@ describe(@"KBProjectile", ^{
     itBehavesLike(@"a game object", ^{
         return [NSDictionary dictionaryWithObjectsAndKeys:projectile, @"gameObject", nil];
     });
-    
 });
 
 SpecEnd
