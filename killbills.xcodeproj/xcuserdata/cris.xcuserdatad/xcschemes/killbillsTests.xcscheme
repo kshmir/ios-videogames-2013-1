@@ -26,6 +26,16 @@
                referenceType = "1">
             </LocationScenarioReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "09A3D3C9181780390067546A"
+               BuildableName = "spectaTests.octest"
+               BlueprintName = "spectaTests"
+               ReferencedContainer = "container:killbills.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

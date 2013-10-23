@@ -10,4 +10,35 @@
 
 @implementation KBProjectile
 
+@synthesize sprite;
+@synthesize speed;
+@synthesize movement;
+
+
++(KBProjectile *) create {
+    KBProjectile * projectile = [[KBProjectile alloc] init];
+    
+    [projectile setSprite: [CCSprite spriteWithFile:@"monster.png"]];
+    [projectile setMovement: [KBLinearMovement allocWithMovingObject: projectile]];
+    
+    return projectile;
+}
+
+-(CGPoint) position {
+    return self.sprite.position;
+}
+
+-(CGSize) size {
+    return self.sprite.contentSize;
+}
+
+
+
+
+-(void) move:(void (^)(CCNode *))block {
+    
+}
+
+
+
 @end

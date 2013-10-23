@@ -16,10 +16,9 @@
 @synthesize movement;
 
 +(KBMonster *) create {
-    KBMonster * monster = [KBMonster alloc];
-    CCSprite * sprite   = [CCSprite spriteWithFile:@"monster.png"];
+    KBMonster * monster = [[KBMonster alloc] init];
     
-    [monster setSprite: sprite];
+    [monster setSprite: [CCSprite spriteWithFile:@"monster.png"]];
     [monster setMovement: [KBLinearMovement allocWithMovingObject: monster]];
     [monster calculatePosition];
     

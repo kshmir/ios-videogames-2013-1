@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KBGameObject.h"
 
-@interface KBProjectile : NSObject
-
+@interface KBProjectile : NSObject<KBMovingObject>
++(KBProjectile *) create;
 @end

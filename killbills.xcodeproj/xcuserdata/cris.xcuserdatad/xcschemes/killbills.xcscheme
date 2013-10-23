@@ -29,12 +29,22 @@
       buildConfiguration = "Debug">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "09F5313B1813959800CC9665"
                BuildableName = "killbillsTests.xctest"
                BlueprintName = "killbillsTests"
+               ReferencedContainer = "container:killbills.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "09A3D3C9181780390067546A"
+               BuildableName = "spectaTests.octest"
+               BlueprintName = "spectaTests"
                ReferencedContainer = "container:killbills.xcodeproj">
             </BuildableReference>
          </TestableReference>
