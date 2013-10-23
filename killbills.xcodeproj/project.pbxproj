@@ -11,7 +11,6 @@
 		097262A11817822A00D1FD4E /* KBSharedSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC53D4181449C500C20FDF /* KBSharedSpecs.m */; };
 		097262A31817822A00D1FD4E /* KBLinearMovementTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */; };
 		097262A51817929000D1FD4E /* KBProjectileSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 097262A41817929000D1FD4E /* KBProjectileSpec.m */; };
-		097262A7181793EA00D1FD4E /* KBMonsterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 097262A6181793EA00D1FD4E /* KBMonsterSpec.m */; };
 		097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35511813D0CE00EBEBD0 /* KBGameMovement.m */; };
 		09A3D3CC181780390067546A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A3D3CB181780390067546A /* SenTestingKit.framework */; };
 		09A3D3CD181780390067546A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
@@ -44,8 +43,8 @@
 		09F531311813959800CC9665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531301813959800CC9665 /* main.m */; };
 		09F531351813959800CC9665 /* KBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531341813959800CC9665 /* KBAppDelegate.m */; };
 		09F531371813959800CC9665 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F531361813959800CC9665 /* Images.xcassets */; };
-		128986027EC3485294463511 /* libPods-spectaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8724BDCEAD40949030C0B8 /* libPods-spectaTests.a */; };
-		81397D9DBAB64793AC3BF1E0 /* libPods-killbills.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 050F261779084FD0BC535004 /* libPods-killbills.a */; };
+		339FA63B32354AA1BF015308 /* libPods-killbills.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF3F53E47E1428485D94AE8 /* libPods-killbills.a */; };
+		A2A30C2E72C7446A92B8BAAE /* libPods-spectaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC91BA528A0D4023A18AFA79 /* libPods-spectaTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050F261779084FD0BC535004 /* libPods-killbills.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-killbills.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		097262A41817929000D1FD4E /* KBProjectileSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBProjectileSpec.m; path = ../killbillsTests/KBProjectileSpec.m; sourceTree = "<group>"; };
 		097262A6181793EA00D1FD4E /* KBMonsterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBMonsterSpec.m; path = ../killbillsTests/KBMonsterSpec.m; sourceTree = "<group>"; };
 		097F353F1813B27D00EBEBD0 /* KBGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameObject.h; sourceTree = "<group>"; };
@@ -110,9 +108,10 @@
 		09F531341813959800CC9665 /* KBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBAppDelegate.m; sourceTree = "<group>"; };
 		09F531361813959800CC9665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1CA6098CE0A545CA961E96A0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		1F8724BDCEAD40949030C0B8 /* libPods-spectaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-spectaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA70780C1434C649A58989A /* Pods-spectaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spectaTests.xcconfig"; path = "Pods/Pods-spectaTests.xcconfig"; sourceTree = "<group>"; };
+		9DF3F53E47E1428485D94AE8 /* libPods-killbills.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-killbills.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F856FA1D6D43E5B3DA318C /* Pods-killbills.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-killbills.xcconfig"; path = "Pods/Pods-killbills.xcconfig"; sourceTree = "<group>"; };
+		EC91BA528A0D4023A18AFA79 /* libPods-spectaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-spectaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +122,7 @@
 				09A3D3CC181780390067546A /* SenTestingKit.framework in Frameworks */,
 				09A3D3CE181780390067546A /* UIKit.framework in Frameworks */,
 				09A3D3CD181780390067546A /* Foundation.framework in Frameworks */,
-				128986027EC3485294463511 /* libPods-spectaTests.a in Frameworks */,
+				A2A30C2E72C7446A92B8BAAE /* libPods-spectaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +133,7 @@
 				09F531271813959800CC9665 /* CoreGraphics.framework in Frameworks */,
 				09F531291813959800CC9665 /* UIKit.framework in Frameworks */,
 				09F531251813959800CC9665 /* Foundation.framework in Frameworks */,
-				81397D9DBAB64793AC3BF1E0 /* libPods-killbills.a in Frameworks */,
+				339FA63B32354AA1BF015308 /* libPods-killbills.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +230,8 @@
 				09F531261813959800CC9665 /* CoreGraphics.framework */,
 				09F531281813959800CC9665 /* UIKit.framework */,
 				09A3D3CB181780390067546A /* SenTestingKit.framework */,
-				050F261779084FD0BC535004 /* libPods-killbills.a */,
-				1F8724BDCEAD40949030C0B8 /* libPods-spectaTests.a */,
+				9DF3F53E47E1428485D94AE8 /* libPods-killbills.a */,
+				EC91BA528A0D4023A18AFA79 /* libPods-spectaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -457,7 +456,6 @@
 			files = (
 				09A90A121813978E00CE346C /* IntroLayer.m in Sources */,
 				09A90A4718139DE100CE346C /* KBMonster.m in Sources */,
-				097262A7181793EA00D1FD4E /* KBMonsterSpec.m in Sources */,
 				09F531311813959800CC9665 /* main.m in Sources */,
 				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
