@@ -59,7 +59,7 @@ NSMutableArray * _projectiles;
     
 }
 
--(void)gameLogic:(ccTime)dt {
+-(void) generateMonsters:(ccTime)dt {
     [self addMonster];
 }
 
@@ -68,29 +68,23 @@ NSMutableArray * _projectiles;
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
     
-    KBProjectile * proj = [KBProjectile create];
+    KBProjectile * projectile = [KBProjectile create];
     
-    // Determine offset of touchLocation to projectile
-    CGPoint offset = ccpSub(touchLocation, proj.position);
+    CGPoint offset = ccpSub(touchLocation, projectile.position);
     
-    // Bail out if you are shooting down or backwards
     if (offset.x <= 0) return;
     
-    // Ok to add now - we've double checked position
-    [self addObject:proj];
     
-    [_projectiles addObject:[proj sprite]];
+    [projectile setMovement:[KBTouchMovement allocWithMovingObject:projectile andTouchOffset: offset]];
     
-    [proj setMovement:[KBTouchMovement allocWithMovingObject:proj andTouchOffset: offset]];
-    
-    // Set up initial touchLocation of projectile
-    
-    [[proj movement] run: ^(CCNode *node) {
+    [projectile move: ^(CCNode *node) {
         [node removeFromParentAndCleanup:YES];
-        // CCCallBlockN in ccTouchesEnded
         [_projectiles removeObject:node];
     }];
     
+    [self addObject:projectile];
+    
+    [_projectiles addObject:[projectile sprite]];
   
     
 }
@@ -133,11 +127,11 @@ NSMutableArray * _projectiles;
         CGSize winSize = [CCDirector sharedDirector].winSize;
         CCSprite *player = [CCSprite spriteWithFile:@"player.png"];
         player.position = ccp(player.contentSize.width/2, winSize.height/2);
-        [self addChild:player];        
-        [self setIsTouchEnabled:YES];
+        [self addChild:player];
+        [self setTouchEnabled:YES];
         
         // Start the schedule for the game logic
-        [self schedule:@selector(gameLogic:) interval:1.0];
+        [self schedule:@selector(generateMonsters:) interval:1.0];
         
         _monsters = [[NSMutableArray alloc] init];
         _projectiles = [[NSMutableArray alloc] init];

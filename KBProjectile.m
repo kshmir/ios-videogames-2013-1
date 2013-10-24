@@ -36,10 +36,8 @@
 }
 
 
-
-
 -(void) move:(void (^)(CCNode *))block {
-    
+    [self.movement run: block];
 }
 
 
