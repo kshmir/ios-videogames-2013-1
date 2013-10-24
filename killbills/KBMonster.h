@@ -11,14 +11,9 @@
 #import "KBGameObject.h"
 #import "KBGameMovement.h"
 
-@interface KBMonster : NSObject <KBMovingObject> {
-    CCSprite * _sprite;
-    KBLinearMovement * _movement;
-    double _speed;
-}
+@interface KBMonster : NSObject <KBMovingObject>
 
 -(void) setSpeedBetween: (double) speed andBetween: (double) topSpeed;
-
 
 +(KBMonster *) create;
 

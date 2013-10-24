@@ -26,7 +26,7 @@
 }
 
 + (KBLinearMovement *) allocWithMovingObject:(id<KBMovingObject>)inst {
-    KBLinearMovement * mov = [KBLinearMovement alloc];
+    KBLinearMovement * mov = [[KBLinearMovement alloc] init];
     mov.object = inst;
     return mov;
 }

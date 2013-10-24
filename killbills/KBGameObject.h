@@ -24,7 +24,7 @@
 
 @protocol KBMovingObject <KBGameObject>
 @property(nonatomic) double speed;
-@property(nonatomic, assign) NSObject<KBGameMovement> * movement;
+@property(nonatomic, retain) NSObject<KBGameMovement> * movement;
 
 -(void) move:(void (^) (CCNode *)) block;
 @end
