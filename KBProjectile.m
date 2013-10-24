@@ -19,8 +19,12 @@
     KBProjectile * projectile = [[KBProjectile alloc] init];
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
+   
+    CCSprite * sprite =[CCSprite spriteWithFile:@"spinner.png"];
+    CCRotateBy *rot = [CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:0.33 angle: 360]];
+    [sprite runAction:rot];
     
-    [projectile setSprite: [CCSprite spriteWithFile:@"projectile.png"]];
+    [projectile setSprite: sprite];
     [projectile setMovement: [KBLinearMovement allocWithMovingObject: projectile]];
     [[projectile sprite] setPosition: ccp(20, winSize.height/2)];
     
@@ -36,7 +40,7 @@
 }
 
 
--(void) move:(void (^)(id<KBGameObject>))block {
+-(void) move:(void (^)(CCNode *))block {
     [self.movement run: block];
 }
 
