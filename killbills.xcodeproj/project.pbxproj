@@ -110,7 +110,6 @@
 		09F531331813959800CC9665 /* KBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBAppDelegate.h; sourceTree = "<group>"; };
 		09F531341813959800CC9665 /* KBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBAppDelegate.m; sourceTree = "<group>"; };
 		09F531361813959800CC9665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1CA6098CE0A545CA961E96A0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7FA70780C1434C649A58989A /* Pods-spectaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spectaTests.xcconfig"; path = "Pods/Pods-spectaTests.xcconfig"; sourceTree = "<group>"; };
 		9DF3F53E47E1428485D94AE8 /* libPods-killbills.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-killbills.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F856FA1D6D43E5B3DA318C /* Pods-killbills.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-killbills.xcconfig"; path = "Pods/Pods-killbills.xcconfig"; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 				09A3D3CF181780390067546A /* spectaTests */,
 				09F531231813959800CC9665 /* Frameworks */,
 				09F531221813959800CC9665 /* Products */,
-				1CA6098CE0A545CA961E96A0 /* Pods.xcconfig */,
 				B5F856FA1D6D43E5B3DA318C /* Pods-killbills.xcconfig */,
 				7FA70780C1434C649A58989A /* Pods-spectaTests.xcconfig */,
 			);

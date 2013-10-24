@@ -15,6 +15,7 @@
 #import "KBMonster.h"
 #import "KBGameObject.h"
 #import "KBProjectile.h"
+#import "KBCollisionDetector.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -23,6 +24,8 @@
 
 NSMutableArray * _monsters;
 NSMutableArray * _projectiles;
+
+KBCollisionDetector * _collisionDetector;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -49,13 +52,13 @@ NSMutableArray * _projectiles;
     
     [kbmonster setSpeedBetween:50 andBetween:200];
     [kbmonster move: ^(CCNode *node) {
-        [_monsters removeObject:node];
+        [_collisionDetector unregisterObject:kbmonster key:@"monster"];
         [node removeFromParentAndCleanup:YES];
        }];
     
     [self addObject:kbmonster];
     
-    [_monsters addObject:kbmonster.sprite];
+    [_collisionDetector registerObject:kbmonster key:@"monster"];
     
 }
 
@@ -79,45 +82,49 @@ NSMutableArray * _projectiles;
     
     [projectile move: ^(CCNode *node) {
         [node removeFromParentAndCleanup:YES];
-        [_projectiles removeObject:node];
+        [_collisionDetector unregisterObject:projectile key:@"projectile"];
     }];
     
     [self addObject:projectile];
     
-    [_projectiles addObject:[projectile sprite]];
-  
-    
+    [_collisionDetector registerObject:projectile key:@"projectile"];
 }
 
 - (void)update:(ccTime)dt {
     
-    NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
-    for (CCSprite *projectile in _projectiles) {
-        
-        NSMutableArray *monstersToDelete = [[NSMutableArray alloc] init];
-        for (CCSprite *monster in _monsters) {
-            
-            if (CGRectIntersectsRect(projectile.boundingBox, monster.boundingBox)) {
-                [monstersToDelete addObject:monster];
-            }
-        }
+  
+    [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
+        [self removeChild:[gameObject sprite] cleanup:YES];
+    }];
     
-        for (CCSprite *monster in monstersToDelete) {
-            [_monsters removeObject:monster];
-            [self removeChild:monster cleanup:YES];
-            }
-        
-        if (monstersToDelete.count > 0) {
-            [projectilesToDelete addObject:projectile];
-        }
-        [monstersToDelete release];
-    }
     
-    for (CCSprite *projectile in projectilesToDelete) {
-        [_projectiles removeObject:projectile];
-        [self removeChild:projectile cleanup:YES];
-    }
-    [projectilesToDelete release];
+//    NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
+//    for (CCSprite *projectile in _projectiles) {
+//        
+//        NSMutableArray *monstersToDelete = [[NSMutableArray alloc] init];
+//        for (CCSprite *monster in _monsters) {
+//            
+//            if (CGRectIntersectsRect(projectile.boundingBox, monster.boundingBox)) {
+//                [monstersToDelete addObject:monster];
+//            }
+//        }
+//    
+//        for (CCSprite *monster in monstersToDelete) {
+//            [_monsters removeObject:monster];
+//            [self removeChild:monster cleanup:YES];
+//            }
+//        
+//        if (monstersToDelete.count > 0) {
+//            [projectilesToDelete addObject:projectile];
+//        }
+//        [monstersToDelete release];
+//    }
+//    
+//    for (CCSprite *projectile in projectilesToDelete) {
+//        [_projectiles removeObject:projectile];
+//        [self removeChild:projectile cleanup:YES];
+//    }
+//    [projectilesToDelete release];
 }
 
 // on "init" you need to initialize your instance
@@ -135,6 +142,11 @@ NSMutableArray * _projectiles;
         
         _monsters = [[NSMutableArray alloc] init];
         _projectiles = [[NSMutableArray alloc] init];
+       
+       
+        NSArray * data = [NSArray arrayWithObject:[NSArray arrayWithObjects:@"monster", @"projectile", nil]];
+        
+        _collisionDetector = [KBCollisionDetector createWithRelations:data];
         
         [self schedule:@selector(update:)];
     }

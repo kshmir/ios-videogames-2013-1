@@ -36,7 +36,7 @@
 }
 
 
--(void) move:(void (^)(CCNode *))block {
+-(void) move:(void (^)(id<KBGameObject>))block {
     [self.movement run: block];
 }
 
