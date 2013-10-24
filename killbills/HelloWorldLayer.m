@@ -92,39 +92,10 @@ KBCollisionDetector * _collisionDetector;
 
 - (void)update:(ccTime)dt {
     
-  
     [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
         [self removeChild:[gameObject sprite] cleanup:YES];
     }];
     
-    
-//    NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
-//    for (CCSprite *projectile in _projectiles) {
-//        
-//        NSMutableArray *monstersToDelete = [[NSMutableArray alloc] init];
-//        for (CCSprite *monster in _monsters) {
-//            
-//            if (CGRectIntersectsRect(projectile.boundingBox, monster.boundingBox)) {
-//                [monstersToDelete addObject:monster];
-//            }
-//        }
-//    
-//        for (CCSprite *monster in monstersToDelete) {
-//            [_monsters removeObject:monster];
-//            [self removeChild:monster cleanup:YES];
-//            }
-//        
-//        if (monstersToDelete.count > 0) {
-//            [projectilesToDelete addObject:projectile];
-//        }
-//        [monstersToDelete release];
-//    }
-//    
-//    for (CCSprite *projectile in projectilesToDelete) {
-//        [_projectiles removeObject:projectile];
-//        [self removeChild:projectile cleanup:YES];
-//    }
-//    [projectilesToDelete release];
 }
 
 // on "init" you need to initialize your instance
