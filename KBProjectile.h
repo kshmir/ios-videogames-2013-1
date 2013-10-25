@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "KBGameObject.h"
 #import "KBAnimate.h"
+#import "KBBaseNode.h"
 
-@interface KBProjectile : NSObject<KBMovingObject>
+@interface KBProjectile : KBBaseNode<KBMovingObject>
 +(KBProjectile *) create;
 @end

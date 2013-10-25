@@ -16,6 +16,7 @@
 
 @synthesize speed;
 @synthesize movement;
+@synthesize sprite;
 
 +(KBMonster *) create {
     KBMonster * monster = [[KBMonster alloc] init];
@@ -55,29 +56,9 @@
     self.sprite.position = ccp(winSize.width + self.size.width/2, actualY);
 }
 
-- (CGPoint) position {
-    return self.sprite.position;
-}
-
-- (CGSize) size {
-    return self.sprite.contentSize;
-}
-
 -(void) setSpeedBetween: (double) paramSpeed andBetween: (double) topSpeed {
     self.speed = paramSpeed + (rand() * 1.0 / RAND_MAX) * (topSpeed - paramSpeed);
     [self->animatedSprite setUpdateSpeed:self.speed];
 }
 
-- (void) move:(void (^) (CCNode *)) block {
-    [self.movement run: block];
-}
-
-- (void)dealloc
-{
-    [self.sprite dealloc];
-    [super dealloc];
-}
--(id) init {
-  return self;
-}
 @end

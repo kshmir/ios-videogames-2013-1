@@ -9,12 +9,11 @@
 #import "KBProjectile.h"
 
 
-@implementation KBProjectile
+@implementation KBProjectile 
 
 @synthesize sprite;
 @synthesize speed;
 @synthesize movement;
-
 
 +(KBProjectile *) create {
     KBProjectile * projectile = [[KBProjectile alloc] init];
@@ -31,20 +30,5 @@
     
     return projectile;
 }
-
--(CGPoint) position {
-    return self.sprite.position;
-}
-
--(CGSize) size {
-    return self.sprite.contentSize;
-}
-
-
--(void) move:(void (^)(CCNode *))block {
-    [self.movement run: block];
-}
-
-
 
 @end

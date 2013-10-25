@@ -47,6 +47,7 @@
 		09A90A4718139DE100CE346C /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
 		09D43A7818143B790042CD21 /* KBProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D43A7718143B790042CD21 /* KBProjectile.m */; };
 		09F30827181B22AE005E5ACB /* KBAnimatedSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F30826181B22AE005E5ACB /* KBAnimatedSprite.m */; };
+		09F3082A181B2D99005E5ACB /* KBBaseNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F30829181B2D99005E5ACB /* KBBaseNode.m */; };
 		09F531251813959800CC9665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
 		09F531271813959800CC9665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531261813959800CC9665 /* CoreGraphics.framework */; };
 		09F531291813959800CC9665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531281813959800CC9665 /* UIKit.framework */; };
@@ -121,6 +122,8 @@
 		09DC53D618144A2A00C20FDF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = ../killbillsTests/SpecHelper.m; sourceTree = "<group>"; };
 		09F30825181B22AE005E5ACB /* KBAnimatedSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAnimatedSprite.h; sourceTree = "<group>"; };
 		09F30826181B22AE005E5ACB /* KBAnimatedSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBAnimatedSprite.m; sourceTree = "<group>"; };
+		09F30828181B2D99005E5ACB /* KBBaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBBaseNode.h; sourceTree = "<group>"; };
+		09F30829181B2D99005E5ACB /* KBBaseNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBBaseNode.m; sourceTree = "<group>"; };
 		09F531211813959800CC9665 /* killbills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = killbills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F531241813959800CC9665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09F531261813959800CC9665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +181,8 @@
 		097F35401813BC9200EBEBD0 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				09F30828181B2D99005E5ACB /* KBBaseNode.h */,
+				09F30829181B2D99005E5ACB /* KBBaseNode.m */,
 				0969CC101819E5C400B5043F /* UI */,
 				092794201818BE23002AF139 /* KBCollisionDetector.h */,
 				092794211818BE23002AF139 /* KBCollisionDetector.m */,
@@ -514,6 +519,7 @@
 				09F531311813959800CC9665 /* main.m in Sources */,
 				092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */,
 				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
+				09F3082A181B2D99005E5ACB /* KBBaseNode.m in Sources */,
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
 				09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */,
 				09D43A7818143B790042CD21 /* KBProjectile.m in Sources */,

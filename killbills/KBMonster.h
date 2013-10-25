@@ -10,8 +10,9 @@
 #import "cocos2d.h"
 #import "KBGameObject.h"
 #import "KBGameMovement.h"
+#import "KBBaseNode.h"
 
-@interface KBMonster : NSObject <KBMovingObject>
+@interface KBMonster : KBBaseNode <KBMovingObject>
 
 -(void) setSpeedBetween: (double) speed andBetween: (double) topSpeed;
 
