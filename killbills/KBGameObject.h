@@ -14,7 +14,7 @@
 @protocol KBGameMovement;
 @protocol KBGameObject <NSObject>
 
-@property(nonatomic, retain) CCSprite * sprite;
+@property(nonatomic, retain) CCNode * sprite;
 
 -(CGSize) size;
 -(CGPoint) position;

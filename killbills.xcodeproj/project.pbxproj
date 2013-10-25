@@ -14,6 +14,12 @@
 		097262A31817822A00D1FD4E /* KBLinearMovementTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */; };
 		097262A51817929000D1FD4E /* KBProjectileSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 097262A41817929000D1FD4E /* KBProjectileSpec.m */; };
 		097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35511813D0CE00EBEBD0 /* KBGameMovement.m */; };
+		098E2281181A183500178179 /* enemies-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098E227B181A183500178179 /* enemies-hd.plist */; };
+		098E2282181A183500178179 /* enemies-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 098E227C181A183500178179 /* enemies-hd.png */; };
+		098E2283181A183500178179 /* enemies-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098E227D181A183500178179 /* enemies-ipadhd.plist */; };
+		098E2284181A183500178179 /* enemies-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 098E227E181A183500178179 /* enemies-ipadhd.png */; };
+		098E2285181A183500178179 /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098E227F181A183500178179 /* enemies.plist */; };
+		098E2286181A183500178179 /* enemies.png in Resources */ = {isa = PBXBuildFile; fileRef = 098E2280181A183500178179 /* enemies.png */; };
 		09A30C771819DDE9000F5C84 /* spinner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C751819DDE9000F5C84 /* spinner.plist */; };
 		09A30C781819DDE9000F5C84 /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C761819DDE9000F5C84 /* spinner.png */; };
 		09A3D3CC181780390067546A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A3D3CB181780390067546A /* SenTestingKit.framework */; };
@@ -72,6 +78,12 @@
 		097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBLinearMovementTest.m; path = ../killbillsTests/KBLinearMovementTest.m; sourceTree = "<group>"; };
 		097F35501813D0CE00EBEBD0 /* KBGameMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameMovement.h; sourceTree = "<group>"; };
 		097F35511813D0CE00EBEBD0 /* KBGameMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBGameMovement.m; sourceTree = "<group>"; };
+		098E227B181A183500178179 /* enemies-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "enemies-hd.plist"; path = "Resources/enemies-hd.plist"; sourceTree = "<group>"; };
+		098E227C181A183500178179 /* enemies-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "enemies-hd.png"; path = "Resources/enemies-hd.png"; sourceTree = "<group>"; };
+		098E227D181A183500178179 /* enemies-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "enemies-ipadhd.plist"; path = "Resources/enemies-ipadhd.plist"; sourceTree = "<group>"; };
+		098E227E181A183500178179 /* enemies-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "enemies-ipadhd.png"; path = "Resources/enemies-ipadhd.png"; sourceTree = "<group>"; };
+		098E227F181A183500178179 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = enemies.plist; path = Resources/enemies.plist; sourceTree = "<group>"; };
+		098E2280181A183500178179 /* enemies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemies.png; path = Resources/enemies.png; sourceTree = "<group>"; };
 		09A30C751819DDE9000F5C84 /* spinner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = spinner.plist; path = Resources/spinner.plist; sourceTree = "<group>"; };
 		09A30C761819DDE9000F5C84 /* spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner.png; path = Resources/spinner.png; sourceTree = "<group>"; };
 		09A3D3CA181780390067546A /* spectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +214,12 @@
 			isa = PBXGroup;
 			children = (
 				09A30C751819DDE9000F5C84 /* spinner.plist */,
+				098E227B181A183500178179 /* enemies-hd.plist */,
+				098E227C181A183500178179 /* enemies-hd.png */,
+				098E227D181A183500178179 /* enemies-ipadhd.plist */,
+				098E227E181A183500178179 /* enemies-ipadhd.png */,
+				098E227F181A183500178179 /* enemies.plist */,
+				098E2280181A183500178179 /* enemies.png */,
 				09A30C761819DDE9000F5C84 /* spinner.png */,
 				09A90A2118139A2200CE346C /* monster-hd.png */,
 				09A90A2218139A2200CE346C /* monster.png */,
@@ -374,23 +392,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098E2282181A183500178179 /* enemies-hd.png in Resources */,
 				09A90A4018139A3800CE346C /* Icon.png in Resources */,
 				09A90A4118139A3800CE346C /* Icon@2x.png in Resources */,
 				09A90A3B18139A3800CE346C /* Default@2x.png in Resources */,
 				09A90A3D18139A3800CE346C /* Icon-Small-50.png in Resources */,
 				09A90A2718139A2200CE346C /* monster-hd.png in Resources */,
 				09A30C781819DDE9000F5C84 /* spinner.png in Resources */,
+				098E2283181A183500178179 /* enemies-ipadhd.plist in Resources */,
 				09F5312F1813959800CC9665 /* InfoPlist.strings in Resources */,
 				09A90A3818139A3800CE346C /* Default-568h@2x.png in Resources */,
+				098E2284181A183500178179 /* enemies-ipadhd.png in Resources */,
 				09A90A2C18139A2200CE346C /* projectile.png in Resources */,
 				09A90A3918139A3800CE346C /* Default-Landscape~ipad.png in Resources */,
+				098E2281181A183500178179 /* enemies-hd.plist in Resources */,
 				09A90A2B18139A2200CE346C /* projectile-hd.png in Resources */,
 				09A90A3E18139A3800CE346C /* Icon-Small.png in Resources */,
 				09A90A2A18139A2200CE346C /* player.png in Resources */,
 				09A90A2818139A2200CE346C /* monster.png in Resources */,
+				098E2285181A183500178179 /* enemies.plist in Resources */,
 				09A30C771819DDE9000F5C84 /* spinner.plist in Resources */,
 				09A90A3C18139A3800CE346C /* Icon-72.png in Resources */,
 				09A90A2918139A2200CE346C /* player-hd.png in Resources */,
+				098E2286181A183500178179 /* enemies.png in Resources */,
 				09A90A3F18139A3800CE346C /* Icon-Small@2x.png in Resources */,
 				09F531371813959800CC9665 /* Images.xcassets in Resources */,
 				09A90A3A18139A3800CE346C /* Default.png in Resources */,

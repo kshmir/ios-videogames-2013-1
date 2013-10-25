@@ -28,7 +28,6 @@
     [[projectile sprite] setPosition: ccp(20, winSize.height/2)];
     
     [KBAnimate repeatRotate:projectile withAngle:360 andDuration:0.33];
-    [KBAnimate repeatOpacity:projectile from:255 to:64 withDuration:0.16];
     
     return projectile;
 }
