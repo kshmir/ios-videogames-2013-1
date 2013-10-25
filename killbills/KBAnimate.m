@@ -30,4 +30,6 @@
 
     [[object sprite]runAction:fade];
 }
+
+
 @end

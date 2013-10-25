@@ -46,6 +46,7 @@
 		09A90A4118139A3800CE346C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A3718139A3800CE346C /* Icon@2x.png */; };
 		09A90A4718139DE100CE346C /* KBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A4618139DE100CE346C /* KBMonster.m */; };
 		09D43A7818143B790042CD21 /* KBProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D43A7718143B790042CD21 /* KBProjectile.m */; };
+		09F30827181B22AE005E5ACB /* KBAnimatedSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F30826181B22AE005E5ACB /* KBAnimatedSprite.m */; };
 		09F531251813959800CC9665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
 		09F531271813959800CC9665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531261813959800CC9665 /* CoreGraphics.framework */; };
 		09F531291813959800CC9665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531281813959800CC9665 /* UIKit.framework */; };
@@ -118,6 +119,8 @@
 		09D43A7718143B790042CD21 /* KBProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBProjectile.m; path = ../KBProjectile.m; sourceTree = "<group>"; };
 		09DC53D4181449C500C20FDF /* KBSharedSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBSharedSpecs.m; path = ../killbillsTests/KBSharedSpecs.m; sourceTree = "<group>"; };
 		09DC53D618144A2A00C20FDF /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = ../killbillsTests/SpecHelper.m; sourceTree = "<group>"; };
+		09F30825181B22AE005E5ACB /* KBAnimatedSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAnimatedSprite.h; sourceTree = "<group>"; };
+		09F30826181B22AE005E5ACB /* KBAnimatedSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBAnimatedSprite.m; sourceTree = "<group>"; };
 		09F531211813959800CC9665 /* killbills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = killbills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F531241813959800CC9665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09F531261813959800CC9665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +167,8 @@
 		0969CC101819E5C400B5043F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				09F30825181B22AE005E5ACB /* KBAnimatedSprite.h */,
+				09F30826181B22AE005E5ACB /* KBAnimatedSprite.m */,
 				0969CC0D1819E5B700B5043F /* KBAnimate.h */,
 				0969CC0E1819E5B700B5043F /* KBAnimate.m */,
 			);
@@ -502,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F30827181B22AE005E5ACB /* KBAnimatedSprite.m in Sources */,
 				09A90A121813978E00CE346C /* IntroLayer.m in Sources */,
 				09A90A4718139DE100CE346C /* KBMonster.m in Sources */,
 				0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */,

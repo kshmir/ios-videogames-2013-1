@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "KBGameObject.h"
+#import "KBAnimatedSprite.h"
 
 @interface KBAnimate : NSObject
 
@@ -20,5 +21,10 @@
                  from: (NSInteger) startOpacity
                    to: (NSInteger) endOpacity
          withDuration: (double) duration;
+
+
++(CCSprite *) buildAnimatedSprite: (NSString *) batchSpriteName
+                         withMask: (NSString *) spriteNameMask
+                        andAmount: (int) amount;
 
 @end

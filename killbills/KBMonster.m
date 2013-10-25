@@ -8,16 +8,12 @@
 
 #import "KBMonster.h"
 #import "KBGameMovement.h"
+#import "KBAnimatedSprite.h"
 
 @implementation KBMonster {
-
-
-__strong NSMutableArray * _walkAnimFrames;
-__strong CCSprite * _baseSprite;
-    
+    __strong KBAnimatedSprite * animatedSprite;
 }
 
-@synthesize sprite;
 @synthesize speed;
 @synthesize movement;
 
@@ -25,28 +21,13 @@ __strong CCSprite * _baseSprite;
     KBMonster * monster = [[KBMonster alloc] init];
     
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"enemies.plist"];
+    
+    monster->animatedSprite = [KBAnimatedSprite createWithBatch:@"enemies.png"
+                                                       withMask:@"en1f%d.png"
+                                                      andAmount:4];
 
-    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemies.png"];
+    [monster setSprite: [monster->animatedSprite spriteSheet]];
     
-    NSMutableArray *walkAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=4; i++) {
-        [walkAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"en1f%d.png",i]]];
-    }
-    
-    CCSprite * baseSprite = [CCSprite spriteWithSpriteFrameName:@"en1f1.png"];
-    
-    monster->_walkAnimFrames = walkAnimFrames;
-    monster->_baseSprite     = baseSprite;
-
-    CCAction * walkAction = [CCRepeatForever actionWithAction:
-                              [CCAnimate actionWithAnimation:
-                               [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:1.0f]]];
-    [baseSprite runAction:walkAction];
-    
-    [spriteSheet addChild:baseSprite];
-    [monster setSprite: spriteSheet];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
 
     [[monster sprite] setPosition:ccp(winSize.width/2, winSize.height/2)];
@@ -55,6 +36,14 @@ __strong CCSprite * _baseSprite;
     [monster calculatePosition];
     
     return monster;
+}
+
+- (CCNode *) sprite {
+    return [animatedSprite spriteSheet];
+}
+
+- (void) setSprite:(CCNode *)sprite {
+    // nop
 }
 
 - (void) calculatePosition {
@@ -76,13 +65,7 @@ __strong CCSprite * _baseSprite;
 
 -(void) setSpeedBetween: (double) paramSpeed andBetween: (double) topSpeed {
     self.speed = paramSpeed + (rand() * 1.0 / RAND_MAX) * (topSpeed - paramSpeed);
-    
-    CCAction * walkAction = [CCRepeatForever actionWithAction:
-                             [CCAnimate actionWithAnimation:
-                              [CCAnimation animationWithSpriteFrames:self->_walkAnimFrames delay:(1.0f * 20/self.speed)]]];
-    [self->_baseSprite stopAllActions];
-    [self->_baseSprite runAction:walkAction];
-    
+    [self->animatedSprite setUpdateSpeed:self.speed];
 }
 
 - (void) move:(void (^) (CCNode *)) block {
