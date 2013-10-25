@@ -8,6 +8,7 @@
 
 #import "KBProjectile.h"
 
+
 @implementation KBProjectile
 
 @synthesize sprite;
@@ -21,12 +22,13 @@
     CGSize winSize = [[CCDirector sharedDirector] winSize];
    
     CCSprite * sprite =[CCSprite spriteWithFile:@"spinner.png"];
-    CCRotateBy *rot = [CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:0.33 angle: 360]];
-    [sprite runAction:rot];
     
     [projectile setSprite: sprite];
     [projectile setMovement: [KBLinearMovement allocWithMovingObject: projectile]];
     [[projectile sprite] setPosition: ccp(20, winSize.height/2)];
+    
+    [KBAnimate repeatRotate:projectile withAngle:360 andDuration:0.33];
+    [KBAnimate repeatOpacity:projectile from:255 to:64 withDuration:0.16];
     
     return projectile;
 }

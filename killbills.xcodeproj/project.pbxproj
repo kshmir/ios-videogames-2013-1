@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 092794211818BE23002AF139 /* KBCollisionDetector.m */; };
+		0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0969CC0E1819E5B700B5043F /* KBAnimate.m */; };
 		097262A01817822A00D1FD4E /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC53D618144A2A00C20FDF /* SpecHelper.m */; };
 		097262A11817822A00D1FD4E /* KBSharedSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC53D4181449C500C20FDF /* KBSharedSpecs.m */; };
 		097262A31817822A00D1FD4E /* KBLinearMovementTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 097F35481813CB0300EBEBD0 /* KBLinearMovementTest.m */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		092794201818BE23002AF139 /* KBCollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBCollisionDetector.h; path = ../KBCollisionDetector.h; sourceTree = "<group>"; };
 		092794211818BE23002AF139 /* KBCollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBCollisionDetector.m; path = ../KBCollisionDetector.m; sourceTree = "<group>"; };
+		0969CC0D1819E5B700B5043F /* KBAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAnimate.h; sourceTree = "<group>"; };
+		0969CC0E1819E5B700B5043F /* KBAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBAnimate.m; sourceTree = "<group>"; };
 		097262A41817929000D1FD4E /* KBProjectileSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBProjectileSpec.m; path = ../killbillsTests/KBProjectileSpec.m; sourceTree = "<group>"; };
 		097262A6181793EA00D1FD4E /* KBMonsterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBMonsterSpec.m; path = ../killbillsTests/KBMonsterSpec.m; sourceTree = "<group>"; };
 		097F353F1813B27D00EBEBD0 /* KBGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGameObject.h; sourceTree = "<group>"; };
@@ -146,9 +149,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0969CC101819E5C400B5043F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0969CC0D1819E5B700B5043F /* KBAnimate.h */,
+				0969CC0E1819E5B700B5043F /* KBAnimate.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		097F35401813BC9200EBEBD0 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				0969CC101819E5C400B5043F /* UI */,
 				092794201818BE23002AF139 /* KBCollisionDetector.h */,
 				092794211818BE23002AF139 /* KBCollisionDetector.m */,
 				09D43A7618143B790042CD21 /* KBProjectile.h */,
@@ -467,6 +480,7 @@
 			files = (
 				09A90A121813978E00CE346C /* IntroLayer.m in Sources */,
 				09A90A4718139DE100CE346C /* KBMonster.m in Sources */,
+				0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */,
 				09F531311813959800CC9665 /* main.m in Sources */,
 				092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */,
 				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
