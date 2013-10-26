@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09208491181C011600450C41 /* KBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09208490181C011600450C41 /* KBPlayer.m */; };
 		092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 092794211818BE23002AF139 /* KBCollisionDetector.m */; };
 		0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0969CC0E1819E5B700B5043F /* KBAnimate.m */; };
 		097262A01817822A00D1FD4E /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC53D618144A2A00C20FDF /* SpecHelper.m */; };
@@ -70,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0920848F181C011600450C41 /* KBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPlayer.h; sourceTree = "<group>"; };
+		09208490181C011600450C41 /* KBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPlayer.m; sourceTree = "<group>"; };
 		092794201818BE23002AF139 /* KBCollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBCollisionDetector.h; path = ../KBCollisionDetector.h; sourceTree = "<group>"; };
 		092794211818BE23002AF139 /* KBCollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBCollisionDetector.m; path = ../KBCollisionDetector.m; sourceTree = "<group>"; };
 		0969CC0D1819E5B700B5043F /* KBAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAnimate.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 		097F35401813BC9200EBEBD0 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				0920848F181C011600450C41 /* KBPlayer.h */,
+				09208490181C011600450C41 /* KBPlayer.m */,
 				09F30828181B2D99005E5ACB /* KBBaseNode.h */,
 				09F30829181B2D99005E5ACB /* KBBaseNode.m */,
 				0969CC101819E5C400B5043F /* UI */,
@@ -523,6 +528,7 @@
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
 				09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */,
 				09D43A7818143B790042CD21 /* KBProjectile.m in Sources */,
+				09208491181C011600450C41 /* KBPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

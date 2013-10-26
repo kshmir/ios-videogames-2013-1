@@ -16,14 +16,12 @@
 #import "KBGameObject.h"
 #import "KBProjectile.h"
 #import "KBCollisionDetector.h"
+#import "KBPlayer.h"
 
 #pragma mark - HelloWorldLayer
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
-
-NSMutableArray * _monsters;
-NSMutableArray * _projectiles;
 
 KBCollisionDetector * _collisionDetector;
 
@@ -102,22 +100,18 @@ KBCollisionDetector * _collisionDetector;
 -(id) init
 {
     if ((self = [super initWithColor:ccc4(255,255,255,255)])) {
-        CGSize winSize = [CCDirector sharedDirector].winSize;
-        CCSprite *player = [CCSprite spriteWithFile:@"player.png"];
-        player.position = ccp(player.contentSize.width/2, winSize.height/2);
-        [self addChild:player];
+        
+        KBPlayer * player = [KBPlayer create];
+        
+        [self addChild:[player sprite]];
+        
         [self setTouchEnabled:YES];
+        
+        NSArray * data = @[@[@"monster", @"projectile"]];
+        _collisionDetector = [KBCollisionDetector createWithRelations:data];
         
         // Start the schedule for the game logic
         [self schedule:@selector(generateMonsters:) interval:1.0];
-        
-        _monsters = [[NSMutableArray alloc] init];
-        _projectiles = [[NSMutableArray alloc] init];
-       
-       
-        NSArray * data = [NSArray arrayWithObject:[NSArray arrayWithObjects:@"monster", @"projectile", nil]];
-        
-        _collisionDetector = [KBCollisionDetector createWithRelations:data];
         
         [self schedule:@selector(update:)];
     }
@@ -133,11 +127,6 @@ KBCollisionDetector * _collisionDetector;
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
-    
-    [_monsters release];
-    _monsters = nil;
-    [_projectiles release];
-    _projectiles = nil;
     
 	[super dealloc];
 }
