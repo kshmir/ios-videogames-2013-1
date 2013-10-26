@@ -78,7 +78,11 @@
 							preserveBackbuffer:NO
 									sharegroup:nil
 								 multiSampling:NO
+
 							   numberOfSamples:0];
+  
+    [self->navController_ setNavigationBarHidden: YES animated:NO];
+    [UIApplication sharedApplication].statusBarHidden = YES ;
 	
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
 	

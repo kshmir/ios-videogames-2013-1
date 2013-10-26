@@ -17,6 +17,8 @@
 #import "KBProjectile.h"
 #import "KBCollisionDetector.h"
 #import "KBPlayer.h"
+#import "KBMenu.h"
+#import "KBGUI.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -25,6 +27,8 @@
    
     KBCollisionDetector * _collisionDetector;
     KBPlayer * _player;
+    KBMenu * _menu;
+    KBGUI * _gui;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -109,16 +113,39 @@
     
 }
 
+-(void) homeClicked1 {
+    
+}
+
+-(void) homeClicked2 {
+    
+}
+
+-(void) homeClicked3 {
+    
+}
+
+-(KBMenu *) menu {
+    return self->_menu;
+}
+
 // on "init" you need to initialize your instance
 -(id) init
 {
     if ((self = [super initWithColor:ccc4(255,255,255,255)])) {
         
         self->_player = [KBPlayer create];
-        
         [self addChild:[self->_player sprite]];
+     
+        self->_menu = [KBMenu create: self];
+        [self addChild:[self->_menu menu]];
+        
+        self->_gui = [KBGUI create: self];
+        [self addChild:[self->_gui gui]];
         
         [self setTouchEnabled:YES];
+
+        [[[self menu] menu] setVisible:NO];
         
         NSArray * data = @[@[@"monster", @"projectile"]];
         _collisionDetector = [KBCollisionDetector createWithRelations:data];
@@ -138,6 +165,7 @@
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
+    
     
 	[super dealloc];
 }
