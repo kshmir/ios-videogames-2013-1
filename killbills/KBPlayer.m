@@ -7,8 +7,12 @@
 //
 
 #import "KBPlayer.h"
+#import "KBGameMovement.h"
+#import "KBAnimatedSprite.h"
 
-@implementation KBPlayer
+@implementation KBPlayer {
+    __strong KBAnimatedSprite * animatedSprite;
+}
 
 @synthesize sprite;
 @synthesize speed;
@@ -17,14 +21,34 @@
 +(KBPlayer *) create {
     KBPlayer * player = [[KBPlayer alloc] init];
     
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"jobs.plist"];
+    
     CGSize winSize = [CCDirector sharedDirector].winSize;
     
-    CCSprite *sprite = [CCSprite spriteWithFile:@"player.png"];
-    sprite.position = ccp(sprite.contentSize.width/2, winSize.height/2);
+    player->animatedSprite = [KBAnimatedSprite createWithBatch:@"jobs.png"
+                                                       withMask:@"jobs%d.png"
+                                                     andAmount:3];
     
-    [player setSprite:sprite];
+    [player setSprite: [player->animatedSprite spriteSheet]];
+   
+    [[player sprite]
+     setPosition:ccp(20, winSize.height/2)];
+   
+    [player->animatedSprite setUpdateSpeed:100];
     
     return player;
 }
 
+- (void) prepareProjectile {
+    [self->animatedSprite setOnlyFrameNumber:5];
+}
+
+
+- (void) launchProjectile {
+    [self->animatedSprite setOnlyFrameNumber:4];
+}
+
+- (void) reanimate {
+    [self->animatedSprite reanimate];
+}
 @end

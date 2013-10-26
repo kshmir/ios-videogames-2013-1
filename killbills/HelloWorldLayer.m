@@ -21,9 +21,11 @@
 #pragma mark - HelloWorldLayer
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer
-
-KBCollisionDetector * _collisionDetector;
+@implementation HelloWorldLayer {
+   
+    KBCollisionDetector * _collisionDetector;
+    KBPlayer * _player;
+}
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -64,6 +66,14 @@ KBCollisionDetector * _collisionDetector;
     [self addMonster];
 }
 
+- (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self->_player prepareProjectile];
+}
+
+- (void) onAnimationEnded {
+   [self->_player reanimate];
+}
+
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];
@@ -75,13 +85,16 @@ KBCollisionDetector * _collisionDetector;
     
     if (offset.x <= 0) return;
     
-    
     [projectile setMovement:[KBTouchMovement allocWithMovingObject:projectile andTouchOffset: offset]];
     
     [projectile move: ^(CCNode *node) {
         [node removeFromParentAndCleanup:YES];
         [_collisionDetector unregisterObject:projectile key:@"projectile"];
     }];
+    
+    [self scheduleOnce:@selector(onAnimationEnded) delay:0.25];
+    
+    [self->_player launchProjectile];
     
     [self addObject:projectile];
     
@@ -101,18 +114,16 @@ KBCollisionDetector * _collisionDetector;
 {
     if ((self = [super initWithColor:ccc4(255,255,255,255)])) {
         
-        KBPlayer * player = [KBPlayer create];
+        self->_player = [KBPlayer create];
         
-        [self addChild:[player sprite]];
+        [self addChild:[self->_player sprite]];
         
         [self setTouchEnabled:YES];
         
         NSArray * data = @[@[@"monster", @"projectile"]];
         _collisionDetector = [KBCollisionDetector createWithRelations:data];
         
-        // Start the schedule for the game logic
         [self schedule:@selector(generateMonsters:) interval:1.0];
-        
         [self schedule:@selector(update:)];
     }
     

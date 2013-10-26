@@ -22,4 +22,7 @@
                             andAmount: (int) amount;
 
 -(void) setUpdateSpeed: (double) speed;
+-(void) setOnlyFrameNumber: (int) frame;
+-(void) reanimate;
+
 @end

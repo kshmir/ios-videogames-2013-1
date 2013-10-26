@@ -10,6 +10,7 @@
 
 @implementation KBAnimatedSprite {
     double _speed;
+    NSString * mask;
 }
 
 @synthesize spriteSheet;
@@ -24,7 +25,7 @@
     CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:batchSpriteName];
     
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=4; i++) {
+    for (int i=1; i<=amount; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:spriteNameMask,i]]];
@@ -36,6 +37,7 @@
     
     KBAnimatedSprite * sprite = [[KBAnimatedSprite alloc]init];
     
+    sprite->mask = spriteNameMask;
     [sprite setSprite:baseSprite];
     [sprite setSpriteSheet:spriteSheet];
     [sprite setAnimFrames:walkAnimFrames];
@@ -46,6 +48,18 @@
 -(void) setUpdateSpeed: (double) speed {
     self->_speed = speed;
     [self reanimate];
+}
+
+-(void) setOnlyFrameNumber: (int) frame {
+    CCSpriteFrame * frameObject = [[CCSpriteFrameCache sharedSpriteFrameCache]
+                                   spriteFrameByName: [NSString stringWithFormat:self->mask,frame]];
+    
+    CCAction * walkAction = [CCRepeatForever actionWithAction:
+                          [CCAnimate actionWithAnimation:
+                           [CCAnimation animationWithSpriteFrames:@[frameObject]
+                                                            delay:100000]]];
+    [[self sprite] stopAllActions];
+    [[self sprite] runAction:walkAction];
 }
 
 -(void) reanimate {

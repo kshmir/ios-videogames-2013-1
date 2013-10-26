@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		09208491181C011600450C41 /* KBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09208490181C011600450C41 /* KBPlayer.m */; };
+		09208498181C126200450C41 /* jobs-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09208492181C126100450C41 /* jobs-hd.plist */; };
+		09208499181C126200450C41 /* jobs-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09208493181C126100450C41 /* jobs-hd.png */; };
+		0920849A181C126200450C41 /* jobs-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09208494181C126100450C41 /* jobs-ipadhd.plist */; };
+		0920849B181C126200450C41 /* jobs-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09208495181C126200450C41 /* jobs-ipadhd.png */; };
+		0920849C181C126200450C41 /* jobs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09208496181C126200450C41 /* jobs.plist */; };
+		0920849D181C126200450C41 /* jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 09208497181C126200450C41 /* jobs.png */; };
 		092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 092794211818BE23002AF139 /* KBCollisionDetector.m */; };
 		0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0969CC0E1819E5B700B5043F /* KBAnimate.m */; };
 		097262A01817822A00D1FD4E /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC53D618144A2A00C20FDF /* SpecHelper.m */; };
@@ -73,6 +79,12 @@
 /* Begin PBXFileReference section */
 		0920848F181C011600450C41 /* KBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPlayer.h; sourceTree = "<group>"; };
 		09208490181C011600450C41 /* KBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPlayer.m; sourceTree = "<group>"; };
+		09208492181C126100450C41 /* jobs-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "jobs-hd.plist"; path = "Resources/jobs-hd.plist"; sourceTree = "<group>"; };
+		09208493181C126100450C41 /* jobs-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jobs-hd.png"; path = "Resources/jobs-hd.png"; sourceTree = "<group>"; };
+		09208494181C126100450C41 /* jobs-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "jobs-ipadhd.plist"; path = "Resources/jobs-ipadhd.plist"; sourceTree = "<group>"; };
+		09208495181C126200450C41 /* jobs-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jobs-ipadhd.png"; path = "Resources/jobs-ipadhd.png"; sourceTree = "<group>"; };
+		09208496181C126200450C41 /* jobs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = jobs.plist; path = Resources/jobs.plist; sourceTree = "<group>"; };
+		09208497181C126200450C41 /* jobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jobs.png; path = Resources/jobs.png; sourceTree = "<group>"; };
 		092794201818BE23002AF139 /* KBCollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBCollisionDetector.h; path = ../KBCollisionDetector.h; sourceTree = "<group>"; };
 		092794211818BE23002AF139 /* KBCollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBCollisionDetector.m; path = ../KBCollisionDetector.m; sourceTree = "<group>"; };
 		0969CC0D1819E5B700B5043F /* KBAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAnimate.h; sourceTree = "<group>"; };
@@ -228,6 +240,12 @@
 		09A90A2D18139A2B00CE346C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09208492181C126100450C41 /* jobs-hd.plist */,
+				09208493181C126100450C41 /* jobs-hd.png */,
+				09208494181C126100450C41 /* jobs-ipadhd.plist */,
+				09208495181C126200450C41 /* jobs-ipadhd.png */,
+				09208496181C126200450C41 /* jobs.plist */,
+				09208497181C126200450C41 /* jobs.png */,
 				09A30C751819DDE9000F5C84 /* spinner.plist */,
 				098E227B181A183500178179 /* enemies-hd.plist */,
 				098E227C181A183500178179 /* enemies-hd.png */,
@@ -408,15 +426,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				098E2282181A183500178179 /* enemies-hd.png in Resources */,
+				09208499181C126200450C41 /* jobs-hd.png in Resources */,
+				0920849C181C126200450C41 /* jobs.plist in Resources */,
 				09A90A4018139A3800CE346C /* Icon.png in Resources */,
 				09A90A4118139A3800CE346C /* Icon@2x.png in Resources */,
 				09A90A3B18139A3800CE346C /* Default@2x.png in Resources */,
 				09A90A3D18139A3800CE346C /* Icon-Small-50.png in Resources */,
 				09A90A2718139A2200CE346C /* monster-hd.png in Resources */,
 				09A30C781819DDE9000F5C84 /* spinner.png in Resources */,
+				0920849D181C126200450C41 /* jobs.png in Resources */,
 				098E2283181A183500178179 /* enemies-ipadhd.plist in Resources */,
 				09F5312F1813959800CC9665 /* InfoPlist.strings in Resources */,
 				09A90A3818139A3800CE346C /* Default-568h@2x.png in Resources */,
+				0920849B181C126200450C41 /* jobs-ipadhd.png in Resources */,
 				098E2284181A183500178179 /* enemies-ipadhd.png in Resources */,
 				09A90A2C18139A2200CE346C /* projectile.png in Resources */,
 				09A90A3918139A3800CE346C /* Default-Landscape~ipad.png in Resources */,
@@ -431,6 +453,8 @@
 				09A90A2918139A2200CE346C /* player-hd.png in Resources */,
 				098E2286181A183500178179 /* enemies.png in Resources */,
 				09A90A3F18139A3800CE346C /* Icon-Small@2x.png in Resources */,
+				09208498181C126200450C41 /* jobs-hd.plist in Resources */,
+				0920849A181C126200450C41 /* jobs-ipadhd.plist in Resources */,
 				09F531371813959800CC9665 /* Images.xcassets in Resources */,
 				09A90A3A18139A3800CE346C /* Default.png in Resources */,
 			);

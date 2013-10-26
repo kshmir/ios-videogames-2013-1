@@ -24,8 +24,8 @@
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"enemies.plist"];
     
     monster->animatedSprite = [KBAnimatedSprite createWithBatch:@"enemies.png"
-                                                       withMask:@"en1f%d.png"
-                                                      andAmount:4];
+        withMask:@"en1f%d.png"
+        andAmount:4];
 
     [monster setSprite: [monster->animatedSprite spriteSheet]];
     

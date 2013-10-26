@@ -13,4 +13,9 @@
 
 +(KBPlayer *) create;
 
+
+- (void) prepareProjectile;
+- (void) launchProjectile;
+- (void) reanimate;
+
 @end
