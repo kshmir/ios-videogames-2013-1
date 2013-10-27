@@ -13,7 +13,7 @@
 
 +(KBPlayer *) create;
 
-
+- (CCSprite *) actualSprite;
 - (void) prepareProjectile;
 - (void) launchProjectile;
 - (void) reanimate;

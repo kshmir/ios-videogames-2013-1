@@ -43,6 +43,9 @@
 		092084D8181C4F6500450C41 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 092084BD181C4F6500450C41 /* pause.png */; };
 		092084D9181C4F6500450C41 /* spinner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092084BE181C4F6500450C41 /* spinner.plist */; };
 		092084DA181C4F6500450C41 /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 092084BF181C4F6500450C41 /* spinner.png */; };
+		092084E7181C876500450C41 /* particle.pex in Resources */ = {isa = PBXBuildFile; fileRef = 092084E4181C876500450C41 /* particle.pex */; };
+		092084E8181C876500450C41 /* particle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092084E5181C876500450C41 /* particle.plist */; };
+		092084E9181C876500450C41 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 092084E6181C876500450C41 /* texture.png */; };
 		092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 092794211818BE23002AF139 /* KBCollisionDetector.m */; };
 		0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0969CC0E1819E5B700B5043F /* KBAnimate.m */; };
 		097262A01817822A00D1FD4E /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DC53D618144A2A00C20FDF /* SpecHelper.m */; };
@@ -62,7 +65,7 @@
 		09A3D3CD181780390067546A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531241813959800CC9665 /* Foundation.framework */; };
 		09A3D3CE181780390067546A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F531281813959800CC9665 /* UIKit.framework */; };
 		09A3D3D4181780390067546A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09A3D3D2181780390067546A /* InfoPlist.strings */; };
-		09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A0E1813978E00CE346C /* HelloWorldLayer.m */; };
+		09A90A111813978E00CE346C /* LevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A0E1813978E00CE346C /* LevelLayer.m */; };
 		09A90A121813978E00CE346C /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A90A101813978E00CE346C /* IntroLayer.m */; };
 		09A90A2718139A2200CE346C /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A2118139A2200CE346C /* monster-hd.png */; };
 		09A90A2818139A2200CE346C /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A90A2218139A2200CE346C /* monster.png */; };
@@ -118,33 +121,36 @@
 		0920849F181C4BC500450C41 /* KBMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBMenu.m; sourceTree = "<group>"; };
 		092084A1181C4E7C00450C41 /* KBGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBGUI.h; sourceTree = "<group>"; };
 		092084A2181C4E7C00450C41 /* KBGUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBGUI.m; sourceTree = "<group>"; };
-		092084A5181C4F6500450C41 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		092084A6181C4F6500450C41 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		092084A7181C4F6500450C41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		092084A8181C4F6500450C41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		092084A9181C4F6500450C41 /* enemies-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "enemies-hd.plist"; sourceTree = "<group>"; };
-		092084AA181C4F6500450C41 /* enemies-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemies-hd.png"; sourceTree = "<group>"; };
-		092084AB181C4F6500450C41 /* enemies-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "enemies-ipadhd.plist"; sourceTree = "<group>"; };
-		092084AC181C4F6500450C41 /* enemies-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemies-ipadhd.png"; sourceTree = "<group>"; };
-		092084AD181C4F6500450C41 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
-		092084AE181C4F6500450C41 /* enemies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemies.png; sourceTree = "<group>"; };
-		092084AF181C4F6500450C41 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		092084B0181C4F6500450C41 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		092084B1181C4F6500450C41 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		092084B2181C4F6500450C41 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		092084B3181C4F6500450C41 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		092084B4181C4F6500450C41 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		092084B5181C4F6500450C41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		092084B6181C4F6500450C41 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-		092084B7181C4F6500450C41 /* jobs-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jobs-hd.plist"; sourceTree = "<group>"; };
-		092084B8181C4F6500450C41 /* jobs-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobs-hd.png"; sourceTree = "<group>"; };
-		092084B9181C4F6500450C41 /* jobs-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "jobs-ipadhd.plist"; sourceTree = "<group>"; };
-		092084BA181C4F6500450C41 /* jobs-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobs-ipadhd.png"; sourceTree = "<group>"; };
-		092084BB181C4F6500450C41 /* jobs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jobs.plist; sourceTree = "<group>"; };
-		092084BC181C4F6500450C41 /* jobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jobs.png; sourceTree = "<group>"; };
-		092084BD181C4F6500450C41 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
-		092084BE181C4F6500450C41 /* spinner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = spinner.plist; sourceTree = "<group>"; };
-		092084BF181C4F6500450C41 /* spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner.png; sourceTree = "<group>"; };
+		092084A5181C4F6500450C41 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		092084A6181C4F6500450C41 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		092084A7181C4F6500450C41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		092084A8181C4F6500450C41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		092084A9181C4F6500450C41 /* enemies-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "enemies-hd.plist"; path = "Resources/enemies-hd.plist"; sourceTree = "<group>"; };
+		092084AA181C4F6500450C41 /* enemies-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "enemies-hd.png"; path = "Resources/enemies-hd.png"; sourceTree = "<group>"; };
+		092084AB181C4F6500450C41 /* enemies-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "enemies-ipadhd.plist"; path = "Resources/enemies-ipadhd.plist"; sourceTree = "<group>"; };
+		092084AC181C4F6500450C41 /* enemies-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "enemies-ipadhd.png"; path = "Resources/enemies-ipadhd.png"; sourceTree = "<group>"; };
+		092084AD181C4F6500450C41 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = enemies.plist; path = Resources/enemies.plist; sourceTree = "<group>"; };
+		092084AE181C4F6500450C41 /* enemies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemies.png; path = Resources/enemies.png; sourceTree = "<group>"; };
+		092084AF181C4F6500450C41 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
+		092084B0181C4F6500450C41 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
+		092084B1181C4F6500450C41 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
+		092084B2181C4F6500450C41 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		092084B3181C4F6500450C41 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		092084B4181C4F6500450C41 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
+		092084B5181C4F6500450C41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		092084B6181C4F6500450C41 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
+		092084B7181C4F6500450C41 /* jobs-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "jobs-hd.plist"; path = "Resources/jobs-hd.plist"; sourceTree = "<group>"; };
+		092084B8181C4F6500450C41 /* jobs-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jobs-hd.png"; path = "Resources/jobs-hd.png"; sourceTree = "<group>"; };
+		092084B9181C4F6500450C41 /* jobs-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "jobs-ipadhd.plist"; path = "Resources/jobs-ipadhd.plist"; sourceTree = "<group>"; };
+		092084BA181C4F6500450C41 /* jobs-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jobs-ipadhd.png"; path = "Resources/jobs-ipadhd.png"; sourceTree = "<group>"; };
+		092084BB181C4F6500450C41 /* jobs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = jobs.plist; path = Resources/jobs.plist; sourceTree = "<group>"; };
+		092084BC181C4F6500450C41 /* jobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jobs.png; path = Resources/jobs.png; sourceTree = "<group>"; };
+		092084BD181C4F6500450C41 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Resources/pause.png; sourceTree = "<group>"; };
+		092084BE181C4F6500450C41 /* spinner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = spinner.plist; path = Resources/spinner.plist; sourceTree = "<group>"; };
+		092084BF181C4F6500450C41 /* spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner.png; path = Resources/spinner.png; sourceTree = "<group>"; };
+		092084E4181C876500450C41 /* particle.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = particle.pex; path = Resources/particle.pex; sourceTree = "<group>"; };
+		092084E5181C876500450C41 /* particle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = particle.plist; path = Resources/particle.plist; sourceTree = "<group>"; };
+		092084E6181C876500450C41 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = texture.png; path = Resources/texture.png; sourceTree = "<group>"; };
 		092794201818BE23002AF139 /* KBCollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBCollisionDetector.h; path = ../KBCollisionDetector.h; sourceTree = "<group>"; };
 		092794211818BE23002AF139 /* KBCollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBCollisionDetector.m; path = ../KBCollisionDetector.m; sourceTree = "<group>"; };
 		0969CC0D1819E5B700B5043F /* KBAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAnimate.h; sourceTree = "<group>"; };
@@ -168,8 +174,8 @@
 		09A3D3D1181780390067546A /* spectaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spectaTests-Info.plist"; sourceTree = "<group>"; };
 		09A3D3D3181780390067546A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09A3D3D7181780390067546A /* spectaTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spectaTests-Prefix.pch"; sourceTree = "<group>"; };
-		09A90A0D1813978E00CE346C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		09A90A0E1813978E00CE346C /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		09A90A0D1813978E00CE346C /* LevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLayer.h; sourceTree = "<group>"; };
+		09A90A0E1813978E00CE346C /* LevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayer.m; sourceTree = "<group>"; };
 		09A90A0F1813978E00CE346C /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		09A90A101813978E00CE346C /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		09A90A2118139A2200CE346C /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
@@ -245,33 +251,6 @@
 		092084A4181C4F6500450C41 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				092084A5181C4F6500450C41 /* Default-568h@2x.png */,
-				092084A6181C4F6500450C41 /* Default-Landscape~ipad.png */,
-				092084A7181C4F6500450C41 /* Default.png */,
-				092084A8181C4F6500450C41 /* Default@2x.png */,
-				092084A9181C4F6500450C41 /* enemies-hd.plist */,
-				092084AA181C4F6500450C41 /* enemies-hd.png */,
-				092084AB181C4F6500450C41 /* enemies-ipadhd.plist */,
-				092084AC181C4F6500450C41 /* enemies-ipadhd.png */,
-				092084AD181C4F6500450C41 /* enemies.plist */,
-				092084AE181C4F6500450C41 /* enemies.png */,
-				092084AF181C4F6500450C41 /* Icon-72.png */,
-				092084B0181C4F6500450C41 /* Icon-Small-50.png */,
-				092084B1181C4F6500450C41 /* Icon-Small.png */,
-				092084B2181C4F6500450C41 /* Icon-Small@2x.png */,
-				092084B3181C4F6500450C41 /* Icon.png */,
-				092084B4181C4F6500450C41 /* Icon@2x.png */,
-				092084B5181C4F6500450C41 /* Info.plist */,
-				092084B6181C4F6500450C41 /* iTunesArtwork */,
-				092084B7181C4F6500450C41 /* jobs-hd.plist */,
-				092084B8181C4F6500450C41 /* jobs-hd.png */,
-				092084B9181C4F6500450C41 /* jobs-ipadhd.plist */,
-				092084BA181C4F6500450C41 /* jobs-ipadhd.png */,
-				092084BB181C4F6500450C41 /* jobs.plist */,
-				092084BC181C4F6500450C41 /* jobs.png */,
-				092084BD181C4F6500450C41 /* pause.png */,
-				092084BE181C4F6500450C41 /* spinner.plist */,
-				092084BF181C4F6500450C41 /* spinner.png */,
 			);
 			name = Resources;
 			path = killbills/Resources;
@@ -339,6 +318,36 @@
 		09A90A2D18139A2B00CE346C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				092084E4181C876500450C41 /* particle.pex */,
+				092084E5181C876500450C41 /* particle.plist */,
+				092084E6181C876500450C41 /* texture.png */,
+				092084A5181C4F6500450C41 /* Default-568h@2x.png */,
+				092084A6181C4F6500450C41 /* Default-Landscape~ipad.png */,
+				092084A7181C4F6500450C41 /* Default.png */,
+				092084A8181C4F6500450C41 /* Default@2x.png */,
+				092084A9181C4F6500450C41 /* enemies-hd.plist */,
+				092084AA181C4F6500450C41 /* enemies-hd.png */,
+				092084AB181C4F6500450C41 /* enemies-ipadhd.plist */,
+				092084AC181C4F6500450C41 /* enemies-ipadhd.png */,
+				092084AD181C4F6500450C41 /* enemies.plist */,
+				092084AE181C4F6500450C41 /* enemies.png */,
+				092084AF181C4F6500450C41 /* Icon-72.png */,
+				092084B0181C4F6500450C41 /* Icon-Small-50.png */,
+				092084B1181C4F6500450C41 /* Icon-Small.png */,
+				092084B2181C4F6500450C41 /* Icon-Small@2x.png */,
+				092084B3181C4F6500450C41 /* Icon.png */,
+				092084B4181C4F6500450C41 /* Icon@2x.png */,
+				092084B5181C4F6500450C41 /* Info.plist */,
+				092084B6181C4F6500450C41 /* iTunesArtwork */,
+				092084B7181C4F6500450C41 /* jobs-hd.plist */,
+				092084B8181C4F6500450C41 /* jobs-hd.png */,
+				092084B9181C4F6500450C41 /* jobs-ipadhd.plist */,
+				092084BA181C4F6500450C41 /* jobs-ipadhd.png */,
+				092084BB181C4F6500450C41 /* jobs.plist */,
+				092084BC181C4F6500450C41 /* jobs.png */,
+				092084BD181C4F6500450C41 /* pause.png */,
+				092084BE181C4F6500450C41 /* spinner.plist */,
+				092084BF181C4F6500450C41 /* spinner.png */,
 				09208492181C126100450C41 /* jobs-hd.plist */,
 				09208493181C126100450C41 /* jobs-hd.png */,
 				09208494181C126100450C41 /* jobs-ipadhd.plist */,
@@ -414,8 +423,8 @@
 			children = (
 				097F35401813BC9200EBEBD0 /* Game */,
 				09A90A2D18139A2B00CE346C /* Resources */,
-				09A90A0D1813978E00CE346C /* HelloWorldLayer.h */,
-				09A90A0E1813978E00CE346C /* HelloWorldLayer.m */,
+				09A90A0D1813978E00CE346C /* LevelLayer.h */,
+				09A90A0E1813978E00CE346C /* LevelLayer.m */,
 				09A90A0F1813978E00CE346C /* IntroLayer.h */,
 				09A90A101813978E00CE346C /* IntroLayer.m */,
 				09F531331813959800CC9665 /* KBAppDelegate.h */,
@@ -528,6 +537,7 @@
 				098E2282181A183500178179 /* enemies-hd.png in Resources */,
 				092084CF181C4F6500450C41 /* Icon@2x.png in Resources */,
 				09208499181C126200450C41 /* jobs-hd.png in Resources */,
+				092084E7181C876500450C41 /* particle.pex in Resources */,
 				092084D1181C4F6500450C41 /* iTunesArtwork in Resources */,
 				0920849C181C126200450C41 /* jobs.plist in Resources */,
 				09A90A4018139A3800CE346C /* Icon.png in Resources */,
@@ -545,6 +555,7 @@
 				092084C8181C4F6500450C41 /* enemies.plist in Resources */,
 				092084C1181C4F6500450C41 /* Default-Landscape~ipad.png in Resources */,
 				092084CD181C4F6500450C41 /* Icon-Small@2x.png in Resources */,
+				092084E8181C876500450C41 /* particle.plist in Resources */,
 				09A30C781819DDE9000F5C84 /* spinner.png in Resources */,
 				092084CB181C4F6500450C41 /* Icon-Small-50.png in Resources */,
 				0920849D181C126200450C41 /* jobs.png in Resources */,
@@ -566,6 +577,7 @@
 				09A90A3E18139A3800CE346C /* Icon-Small.png in Resources */,
 				09A90A2A18139A2200CE346C /* player.png in Resources */,
 				09A90A2818139A2200CE346C /* monster.png in Resources */,
+				092084E9181C876500450C41 /* texture.png in Resources */,
 				098E2285181A183500178179 /* enemies.plist in Resources */,
 				092084D4181C4F6500450C41 /* jobs-ipadhd.plist in Resources */,
 				092084C0181C4F6500450C41 /* Default-568h@2x.png in Resources */,
@@ -679,7 +691,7 @@
 				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
 				09F3082A181B2D99005E5ACB /* KBBaseNode.m in Sources */,
 				09F531351813959800CC9665 /* KBAppDelegate.m in Sources */,
-				09A90A111813978E00CE346C /* HelloWorldLayer.m in Sources */,
+				09A90A111813978E00CE346C /* LevelLayer.m in Sources */,
 				09D43A7818143B790042CD21 /* KBProjectile.m in Sources */,
 				09208491181C011600450C41 /* KBPlayer.m in Sources */,
 			);

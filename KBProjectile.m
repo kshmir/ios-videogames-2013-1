@@ -26,6 +26,8 @@
     [projectile setMovement: [KBLinearMovement allocWithMovingObject: projectile]];
     [[projectile sprite] setPosition: ccp(20, winSize.height/2)];
     
+   
+    
     [KBAnimate repeatRotate:projectile withAngle:360 andDuration:0.33];
     
     return projectile;

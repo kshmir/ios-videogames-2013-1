@@ -39,6 +39,11 @@
     return player;
 }
 
+
+- (CCSprite *) actualSprite {
+    return [self->animatedSprite sprite];
+}
+
 - (void) prepareProjectile {
     [self->animatedSprite setOnlyFrameNumber:5];
 }
@@ -49,6 +54,7 @@
 }
 
 - (void) reanimate {
+    [[self->animatedSprite sprite] setOpacity: 255];
     [self->animatedSprite reanimate];
 }
 @end

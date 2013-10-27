@@ -17,12 +17,24 @@
     [[object sprite]runAction:rot];
 }
 
++(void) toggleOpacity: (CCNode *) sprite
+                 from: (NSInteger) startOpacity
+                   to: (NSInteger) endOpacity
+         withDuration: (double) duration
+                times: (NSUInteger) times {
+
+    CCFiniteTimeAction * action = [CCSequence actions:
+                                   [CCFadeTo actionWithDuration:duration opacity:startOpacity],
+                                   [CCFadeTo actionWithDuration:duration opacity:endOpacity], nil];
+    CCAction *fade = [CCRepeat actionWithAction:action times: times];
+
+    [sprite runAction:fade];
+}
 +(void) repeatOpacity: (id<KBGameObject>) object
                  from: (NSInteger) startOpacity
                    to: (NSInteger) endOpacity
          withDuration: (double) duration {
-    
-    
+ 
     CCAction *fade = [CCRepeatForever actionWithAction:[CCSequence actions:
                                                         [CCFadeTo actionWithDuration:duration opacity:startOpacity],
                                                         [CCFadeTo actionWithDuration:duration opacity:endOpacity],
@@ -31,5 +43,14 @@
     [[object sprite]runAction:fade];
 }
 
++(void) increaseScale: (id<KBGameObject>) object
+                   by: (double) amount
+         withDuration: (double) duration {
+    
+    CCAction *scale = [CCRepeatForever actionWithAction:[CCSequence actions:
+                                                        [CCScaleBy actionWithDuration:duration scale:amount], nil]];
+
+    [[object sprite]runAction:scale];
+}
 
 @end

@@ -53,8 +53,6 @@
     [mnu setPosition:ccp(winSize.width/2,winSize.height/2)];
     [mnu alignItemsVertically];
     
-   
-    
     menu->menu = mnu;
     menu->paused = NO;
     menu->scene = forLayer;

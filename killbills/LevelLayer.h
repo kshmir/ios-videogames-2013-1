@@ -14,9 +14,7 @@
 #import "KBMenu.h"
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayerColor
-{
-}
+@interface LevelLayer : CCLayerColor
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;

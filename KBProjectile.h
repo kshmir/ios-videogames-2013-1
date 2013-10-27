@@ -12,5 +12,7 @@
 #import "KBBaseNode.h"
 
 @interface KBProjectile : KBBaseNode<KBMovingObject>
+
+@property (nonatomic) BOOL special;
 +(KBProjectile *) create;
 @end

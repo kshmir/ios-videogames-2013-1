@@ -65,7 +65,7 @@
     return [[self items] objectForKey:key];
 }
 
-- (void) detectCollisions: (void (^)(id<KBGameObject>, NSString * key)) block {
+- (void) detectCollisions: (BOOL (^)(id<KBGameObject>, NSString * key)) block {
     for (KBCollisionRelation * relation in relations) {
         [self detectCollisionsForKeys: [relation firstKey]
                                   and: [relation lastKey]
@@ -75,7 +75,7 @@
 
 - (void) detectCollisionsForKeys: (NSString *) firstKey
                              and: (NSString *) lastKey
-                       withBlock: (void (^)(id<KBGameObject>, NSString * key)) block {
+                       withBlock: (BOOL (^)(id<KBGameObject>, NSString * key)) block {
     NSMutableArray * firstElementsToDelete = [[NSMutableArray alloc] init];
 
     for (id<KBGameObject> firstItem in [items objectForKey:firstKey]) {
@@ -89,8 +89,9 @@
         }
         
         for (id<KBGameObject> secondItem in secondElementsToDelete) {
-            [[items objectForKey:lastKey] removeObject:secondItem];
-            block(secondItem, lastKey);
+            if ( block(secondItem, lastKey) ) {
+                [[items objectForKey:lastKey] removeObject:secondItem];
+            }
         }
         
         if ([secondElementsToDelete count] > 0) {
@@ -102,8 +103,9 @@
     
    
     for (id<KBGameObject> item in firstElementsToDelete) {
-        [[items objectForKey:firstKey] removeObject:item];
-        block(item, firstKey);
+        if (block(item, firstKey)) {
+            [[items objectForKey:firstKey] removeObject:item];
+        }
     }
     
     [firstElementsToDelete release];

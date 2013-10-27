@@ -22,9 +22,13 @@
                    to: (NSInteger) endOpacity
          withDuration: (double) duration;
 
++(void) increaseScale: (id<KBGameObject>) object
+                   by: (double) amount
+         withDuration: (double) duration;
 
-+(CCSprite *) buildAnimatedSprite: (NSString *) batchSpriteName
-                         withMask: (NSString *) spriteNameMask
-                        andAmount: (int) amount;
-
++(void) toggleOpacity: (CCNode *) object
+                 from: (NSInteger) startOpacity
+                   to: (NSInteger) endOpacity
+         withDuration: (double) duration
+                times: (NSUInteger) times;
 @end

@@ -20,7 +20,7 @@
 - (BOOL) unregisterObject: (id<KBGameObject>) object key: (NSString *) string;
 - (BOOL) registerObject: (id<KBGameObject>) object key: (NSString *) string;
 
-- (void) detectCollisions: (void (^)(id<KBGameObject>, NSString * key)) block;
+- (void) detectCollisions: (BOOL (^)(id<KBGameObject>, NSString * key)) block;
 
 @end
 

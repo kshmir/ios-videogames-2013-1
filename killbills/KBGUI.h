@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "cocos2d.h"
+#import "LevelLayer.h"
 
 @interface KBGUI : NSObject
 
@@ -16,5 +17,7 @@
 
 - (void) resumeClick: (id) sender;
 
-+ (KBGUI *) create: (CCLayer *) parent;
+- (void) setScore: (int) score;
+
++ (KBGUI *) create: (LevelLayer *) parent;
 @end

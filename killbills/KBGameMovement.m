@@ -34,7 +34,13 @@
 @end
 
 
-@implementation KBTouchMovement
+@implementation KBTouchMovement {
+    double duration;
+}
+
+- (double) duration {
+    return self->duration;
+}
 
 @synthesize object;
 @synthesize touchOffset;
@@ -53,6 +59,8 @@
     float length = sqrtf((offRealX*offRealX)+(offRealY*offRealY));
     float velocity = 480/1; // 480pixels/1sec
     float realMoveDuration = length/velocity;
+    
+    self->duration = realMoveDuration;
     
     if (block != nil) {
         [[object sprite] runAction:

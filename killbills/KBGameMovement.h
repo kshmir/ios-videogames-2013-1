@@ -29,6 +29,8 @@
 @property (nonatomic, strong) id<KBMovingObject> object;
 @property (nonatomic) CGPoint touchOffset;
 
+- (double) duration;
+
 + (KBTouchMovement *) allocWithMovingObject: (id<KBMovingObject>) object andTouchOffset: (CGPoint) touchLocation;
 
 @end

@@ -7,8 +7,9 @@
 //
 
 
+#include <OpenGLES/ES1/gl.h>
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "LevelLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "KBAppDelegate.h"
@@ -23,27 +24,30 @@
 #pragma mark - HelloWorldLayer
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer {
+@implementation LevelLayer {
    
     KBCollisionDetector * _collisionDetector;
     KBPlayer * _player;
+    
     KBMenu * _menu;
     KBGUI * _gui;
+    
+    int score;
+    
+    int multiplier;
+    
+    double lastHitTime;
+    
+    double projectileStartTime;
+    BOOL specialProjectile;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
-	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
-	// add layer as a child to scene
+	LevelLayer *layer = [LevelLayer node];
 	[scene addChild: layer];
-	
-	// return the scene
 	return scene;
 }
 
@@ -58,7 +62,7 @@
     [kbmonster move: ^(CCNode *node) {
         [_collisionDetector unregisterObject:kbmonster key:@"monster"];
         [node removeFromParentAndCleanup:YES];
-       }];
+    }];
     
     [self addObject:kbmonster];
     
@@ -72,6 +76,7 @@
 
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self->_player prepareProjectile];
+    self->projectileStartTime = CACurrentMediaTime();
 }
 
 - (void) onAnimationEnded {
@@ -80,21 +85,37 @@
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    double diff = CACurrentMediaTime() - self->projectileStartTime;
+    
+    if (diff > 0.9) {
+        self->specialProjectile = YES;
+    }
+    
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
     
     KBProjectile * projectile = [KBProjectile create];
     
+    [projectile setSpecial: self->specialProjectile];
+    
+    self->specialProjectile = NO;
     CGPoint offset = ccpSub(touchLocation, projectile.position);
     
     if (offset.x <= 0) return;
     
-    [projectile setMovement:[KBTouchMovement allocWithMovingObject:projectile andTouchOffset: offset]];
     
+    KBTouchMovement * movement = [KBTouchMovement allocWithMovingObject:projectile andTouchOffset: offset];
+    
+    [projectile setMovement: movement];
     [projectile move: ^(CCNode *node) {
         [node removeFromParentAndCleanup:YES];
         [_collisionDetector unregisterObject:projectile key:@"projectile"];
+        self->multiplier = 0;
     }];
+    
+    int sizeRate = ([projectile special]) ? 5 : 2;
+    
+    [KBAnimate increaseScale:projectile by:sizeRate withDuration:[movement duration]];
     
     [self scheduleOnce:@selector(onAnimationEnded) delay:0.25];
     
@@ -105,23 +126,47 @@
     [_collisionDetector registerObject:projectile key:@"projectile"];
 }
 
+
+- (void) incrementScoreBy: (int) incrementSize {
+    [self setScore:(self->score + incrementSize)];
+}
+
+- (void) setScore: (int) aScore {
+    self->score = aScore;
+    [self->_gui setScore: score];
+}
+
 - (void)update:(ccTime)dt {
-    
+   
     [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
+        if ([key isEqual:@"monster"]) {
+            NSTimeInterval newInterval = CACurrentMediaTime();
+            NSTimeInterval difference = newInterval - self->lastHitTime;
+            
+            if (difference < 2.00) {
+                self->multiplier += 1;
+            } else {
+                self->multiplier = 0;
+            }
+            
+            self->lastHitTime = newInterval;
+            [self incrementScoreBy:(100 * (multiplier + 1) * (multiplier + 1))];
+            
+            CCParticleSystemQuad * el = [CCParticleSystemQuad particleWithFile:@"particle.plist"];
+            [el setBlendFunc:(ccBlendFunc){GL_ZERO,GL_ONE_MINUS_SRC_COLOR}];
+            [el setDuration:0.5];
+            [el setPosition:[[gameObject sprite] position]];
+            [el setAutoRemoveOnFinish:YES];
+            [self addChild: el z:10];
+        }
+        if ([key isEqual:@"projectile"]) {
+            if ([gameObject special]) {
+                return NO;
+            }
+        }
         [self removeChild:[gameObject sprite] cleanup:YES];
+        return YES;
     }];
-    
-}
-
--(void) homeClicked1 {
-    
-}
-
--(void) homeClicked2 {
-    
-}
-
--(void) homeClicked3 {
     
 }
 
@@ -129,14 +174,14 @@
     return self->_menu;
 }
 
+
 // on "init" you need to initialize your instance
 -(id) init
 {
     if ((self = [super initWithColor:ccc4(255,255,255,255)])) {
-        
         self->_player = [KBPlayer create];
         [self addChild:[self->_player sprite]];
-     
+        
         self->_menu = [KBMenu create: self];
         [self addChild:[self->_menu menu]];
         
@@ -146,41 +191,18 @@
         [self setTouchEnabled:YES];
 
         [[[self menu] menu] setVisible:NO];
+       
+        self->lastHitTime = CACurrentMediaTime();
         
         NSArray * data = @[@[@"monster", @"projectile"]];
+        
         _collisionDetector = [KBCollisionDetector createWithRelations:data];
         
         [self schedule:@selector(generateMonsters:) interval:1.0];
         [self schedule:@selector(update:)];
+        
     }
     
 	return self;
-}
-
-// on "dealloc" you need to release all your retained objects
-- (void) dealloc
-{
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
-	
-	// don't forget to call "super dealloc"
-    
-    
-	[super dealloc];
-}
-
-#pragma mark GameKit delegate
-
--(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
-{
-	KBAppDelegate *app = (KBAppDelegate*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
-}
-
--(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
-{
-	KBAppDelegate *app = (KBAppDelegate*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
 }
 @end
