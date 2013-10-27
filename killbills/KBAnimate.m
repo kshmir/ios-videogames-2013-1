@@ -10,13 +10,36 @@
 
 @implementation KBAnimate
 
-+(void) repeatRotate: (id<KBGameObject>) object
++(void) repeatRotateNode: (CCNode *) sprite
            withAngle: (NSInteger) angle
          andDuration: (double) duration {
     CCAction *rot = [CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:duration angle: angle]];
-    [[object sprite]runAction:rot];
+    [sprite runAction:rot];
+}
++(void) repeatRotate: (id<KBGameObject>) object
+           withAngle: (NSInteger) angle
+         andDuration: (double) duration {
+    [KBAnimate repeatRotateNode:[object sprite] withAngle:angle andDuration:duration];
 }
 
++(void) repeatTint: (CCNode *) sprite
+             fromR: (NSInteger) fromR
+             fromG: (NSInteger) fromG
+             fromB: (NSInteger) fromB
+             toR: (NSInteger) toR
+             toG: (NSInteger) toG
+             toB: (NSInteger) toB
+         withDuration: (double) duration
+{
+
+    CCActionInterval * action = [CCSequence actions:
+                                   [CCTintTo actionWithDuration:duration red:fromR green:fromG blue:fromB],
+                                   [CCTintTo actionWithDuration:duration red:toR green:toG blue:toB], nil];
+    
+    CCAction *tint = [CCRepeatForever actionWithAction:action];
+
+    [sprite runAction:tint];
+}
 +(void) toggleOpacity: (CCNode *) sprite
                  from: (NSInteger) startOpacity
                    to: (NSInteger) endOpacity

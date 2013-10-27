@@ -11,11 +11,15 @@
 #import "KBGameObject.h"
 #import "KBGameMovement.h"
 #import "KBBaseNode.h"
+#import "LevelLayer.h"
 
+@class LevelLayer;
 @interface KBMonster : KBBaseNode <KBMovingObject>
 
 -(void) setSpeedBetween: (double) speed andBetween: (double) topSpeed;
 
++(KBMonster *) createBerserk: (LevelLayer *) owner;
++(KBMonster *) createSpeeder: (LevelLayer *) owner;
 +(KBMonster *) create;
 
 @end

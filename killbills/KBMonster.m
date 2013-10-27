@@ -6,13 +6,20 @@
 //  Copyright (c) 2013 Cristian Pereyra. All rights reserved.
 //
 
+#import "LevelLayer.h"
 #import "KBMonster.h"
 #import "KBGameMovement.h"
 #import "KBAnimatedSprite.h"
 
 @implementation KBMonster {
     __strong KBAnimatedSprite * animatedSprite;
+    LevelLayer * owner;
+    int type;
 }
+
+#define KBM_NORMAL 0
+#define KBM_BERSERK 1
+#define KBM_SPEEDER 2
 
 @synthesize speed;
 @synthesize movement;
@@ -38,6 +45,42 @@
     
     return monster;
 }
++(KBMonster *) createSpeeder: (LevelLayer *) owner {
+    KBMonster * monster = [KBMonster create];
+   
+    [KBAnimate repeatTint:[monster->animatedSprite sprite] fromR:255 fromG:255 fromB:255 toR:128 toG:255 toB:128 withDuration:0.25];
+    [KBAnimate repeatRotateNode:[monster->animatedSprite sprite] withAngle:360 andDuration:1.25];
+    monster->type = KBM_SPEEDER;
+    monster->owner = owner;
+   
+    return monster;
+}
+
++(KBMonster *) createBerserk: (LevelLayer *) owner {
+    KBMonster * monster = [KBMonster create];
+    
+    monster->type = KBM_BERSERK;
+    monster->owner = owner;
+    
+    [[monster->animatedSprite sprite] runAction:[CCTintTo actionWithDuration:10 red:128 green:0 blue:0]];
+
+    [[owner scheduler] scheduleSelector:@selector(explode)
+                              forTarget:monster
+                               interval:10
+                                 repeat:0
+                                  delay:0
+                                 paused:NO];
+    
+    return monster;
+}
+
+- (void) explode {
+    if ([[self sprite] tag] != KBO_DEAD) {
+        [owner animateExplosion:self];
+        [owner removeObject: self];
+        [owner addChildMonster];
+    }
+}
 
 - (CCNode *) sprite {
     return [animatedSprite spriteSheet];
@@ -45,6 +88,13 @@
 
 - (void) setSprite:(CCNode *)sprite {
     // nop
+}
+
+- (void) move:(void (^)(CCNode *))block {
+    if (type == KBM_BERSERK) {
+        self.speed /= 10;
+    }
+    [super move: block];
 }
 
 - (void) calculatePosition {
@@ -58,7 +108,15 @@
 
 -(void) setSpeedBetween: (double) paramSpeed andBetween: (double) topSpeed {
     self.speed = paramSpeed + (rand() * 1.0 / RAND_MAX) * (topSpeed - paramSpeed);
+    if (type == KBM_BERSERK) {
+        self.speed *= 2;
+    }
+    
     [self->animatedSprite setUpdateSpeed:self.speed];
+    
+    if (type == KBM_SPEEDER) {
+        self.speed *= 3;
+    }
 }
 
 @end

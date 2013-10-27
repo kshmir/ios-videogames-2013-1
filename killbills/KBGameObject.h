@@ -11,6 +11,8 @@
 #import "cocos2d.h"
 #import "KBGameMovement.h"
 
+#define KBO_DEAD 27
+
 @protocol KBGameMovement;
 @protocol KBGameObject <NSObject>
 

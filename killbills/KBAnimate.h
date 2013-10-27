@@ -13,9 +13,23 @@
 
 @interface KBAnimate : NSObject
 
++(void) repeatRotateNode: (CCNode *) sprite
+           withAngle: (NSInteger) angle
+             andDuration: (double) duration;
+
 +(void) repeatRotate: (id<KBGameObject>) object
            withAngle: (NSInteger) angle
          andDuration: (double) duration;
+
+
++(void) repeatTint: (CCNode *) sprite
+             fromR: (NSInteger) fromR
+             fromG: (NSInteger) fromG
+             fromB: (NSInteger) fromB
+             toR: (NSInteger) toR
+             toG: (NSInteger) toG
+             toB: (NSInteger) toB
+      withDuration: (double) duration;
 
 +(void) repeatOpacity: (id<KBGameObject>) object
                  from: (NSInteger) startOpacity

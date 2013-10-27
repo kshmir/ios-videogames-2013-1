@@ -58,7 +58,8 @@
                           [CCAnimate actionWithAnimation:
                            [CCAnimation animationWithSpriteFrames:@[frameObject]
                                                             delay:100000]]];
-    [[self sprite] stopAllActions];
+    [walkAction setTag:10];
+    [[self sprite] stopActionByTag:10];
     [[self sprite] runAction:walkAction];
 }
 
@@ -68,8 +69,9 @@
                           [CCAnimate actionWithAnimation:
                            [CCAnimation animationWithSpriteFrames:[self animFrames]
                                                             delay:actualSpeed]]];
-    [[self sprite] stopAllActions];
-    [[self sprite] runAction:walkAction];
+    [walkAction setTag:10];
+    [[self sprite] stopActionByTag:10];
+    [[self sprite] runAction: walkAction];
 }
 
 @end

@@ -11,6 +11,8 @@
 #import "cocos2d.h"
 #import "LevelLayer.h"
 
+@class LevelLayer;
+
 @interface KBGUI : NSObject
 
 - (CCNode *) gui;

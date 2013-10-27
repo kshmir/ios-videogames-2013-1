@@ -11,15 +11,8 @@
 // Import the interfaces
 #import "LevelLayer.h"
 
+
 // Needed to obtain the Navigation Controller
-#import "KBAppDelegate.h"
-#import "KBMonster.h"
-#import "KBGameObject.h"
-#import "KBProjectile.h"
-#import "KBCollisionDetector.h"
-#import "KBPlayer.h"
-#import "KBMenu.h"
-#import "KBGUI.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -42,6 +35,7 @@
     BOOL specialProjectile;
 }
 
+
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
@@ -55,10 +49,7 @@
     [self addChild: [content sprite]];
 }
 
-- (void) addMonster {
-    KBMonster * kbmonster = [KBMonster create];
-    
-    [kbmonster setSpeedBetween:50 andBetween:200];
+- (void)prepareMonster:(KBMonster *)kbmonster {
     [kbmonster move: ^(CCNode *node) {
         [_collisionDetector unregisterObject:kbmonster key:@"monster"];
         [node removeFromParentAndCleanup:YES];
@@ -67,7 +58,30 @@
     [self addObject:kbmonster];
     
     [_collisionDetector registerObject:kbmonster key:@"monster"];
+}
+
+- (void) addMonster {
+    double r = (rand() * 1.0 / RAND_MAX) * (10);
     
+    KBMonster * kbmonster;
+    if (r > 7 && r < 8) {
+        kbmonster = [KBMonster createBerserk: self];
+    } else if (r > 8) {
+        kbmonster = [KBMonster createSpeeder: self];
+    } else {
+        kbmonster = [KBMonster create];
+    }
+    [kbmonster setSpeedBetween:50 andBetween:200];
+    
+    [self prepareMonster:kbmonster];
+}
+
+- (void) addChildMonster {
+    for (int i = 0; i < 10; i++) {
+        KBMonster * kbmonster = [KBMonster create];
+        [kbmonster setSpeedBetween:25 andBetween:75];
+        [self prepareMonster:kbmonster];
+    }
 }
 
 -(void) generateMonsters:(ccTime)dt {
@@ -81,6 +95,11 @@
 
 - (void) onAnimationEnded {
    [self->_player reanimate];
+}
+
+- (void) removeObject: (id<KBGameObject>) object {
+    [_collisionDetector unregisterObject:object key:@"monster"];
+    [[object sprite] removeFromParentAndCleanup:YES];
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -136,6 +155,15 @@
     [self->_gui setScore: score];
 }
 
+- (void)animateExplosion:(id)gameObject {
+    CCParticleSystemQuad * el = [CCParticleSystemQuad particleWithFile:@"particle.plist"];
+    [el setBlendFunc:(ccBlendFunc){GL_ZERO,GL_ONE_MINUS_SRC_COLOR}];
+    [el setDuration:0.5];
+    [el setPosition:[[gameObject sprite] position]];
+    [el setAutoRemoveOnFinish:YES];
+    [self addChild: el z:10];
+}
+
 - (void)update:(ccTime)dt {
    
     [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
@@ -152,12 +180,9 @@
             self->lastHitTime = newInterval;
             [self incrementScoreBy:(100 * (multiplier + 1) * (multiplier + 1))];
             
-            CCParticleSystemQuad * el = [CCParticleSystemQuad particleWithFile:@"particle.plist"];
-            [el setBlendFunc:(ccBlendFunc){GL_ZERO,GL_ONE_MINUS_SRC_COLOR}];
-            [el setDuration:0.5];
-            [el setPosition:[[gameObject sprite] position]];
-            [el setAutoRemoveOnFinish:YES];
-            [self addChild: el z:10];
+            [self animateExplosion:gameObject];
+            
+            [[gameObject sprite] setTag:KBO_DEAD];
         }
         if ([key isEqual:@"projectile"]) {
             if ([gameObject special]) {
