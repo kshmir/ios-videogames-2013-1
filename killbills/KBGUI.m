@@ -44,6 +44,16 @@
     [scoreText setColor:ccc3(0,0,0)];
     [scoreText setPosition:ccp(winSize.width / 2, [scoreText contentSize].height)];
     
+    CCSprite * live = [CCSprite spriteWithFile:@"live.png"];
+    [live setScale: 0.5];
+    CCLabelTTF * liveCount = [CCLabelTTF labelWithString:@"x 3" fontName:@"Verdana" fontSize:14.0];
+    [liveCount setColor:ccc3(0,0,0)];
+    
+    [liveCount setPosition:ccp(winSize.width / 2 + [live contentSize].width / 2,
+                              (winSize.height) - [live contentSize].height * 0.75)];
+    [live setPosition:ccp(winSize.width / 2 - [live contentSize].width / 4,
+                              (winSize.height) - [live contentSize].height * 0.75)];
+    
     CCMenuItem * menuItem = [CCMenuItemImage
                              itemWithNormalImage:@"pause.png"
                              selectedImage:@"pause.png"
@@ -52,21 +62,25 @@
     
     [menuItem setScale: 0.15];
     [menuItem setPosition:ccp(winSize.width - [menuItem contentSize].width * 0.1,[menuItem contentSize].height * 0.1)];
-   
-    [parent addChild:scoreText];
+    [menuItem setTarget:gui selector:@selector(resumeClick:)];
     
     CCMenu *menu = [CCMenu menuWithItems:menuItem, nil];
-    [menuItem setTarget:gui selector:@selector(resumeClick:)];
+    
     menu.position = CGPointZero;
+    
+    [scoreText setZOrder:100];
+    [live      setZOrder:100];
+    [liveCount setZOrder:100];
+    
+    [parent addChild:scoreText];
+    [parent addChild:live];
+    [parent addChild:liveCount];
    
     gui->_scoreLabel = scoreText;
     gui->_gui = menu;
     
     [gui->_gui setZOrder:100];
     [gui->_scoreLabel setZOrder:100];
-    
-    
-    
     
     return gui;
 }

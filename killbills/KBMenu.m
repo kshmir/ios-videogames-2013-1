@@ -27,6 +27,7 @@
 }
 
 -(void) toggle {
+    
     if (!self->paused) {
         [scene setTouchEnabled:NO];
         [[self menu] setVisible:YES];
@@ -45,15 +46,15 @@
     
     CCLabelTTF *lbl_Home = [CCLabelTTF labelWithString:@"Resume" fontName:@"verdana" fontSize:25];
     [lbl_Home setColor:ccc3(0,0,0)];
-    
+    CCMenuItemLabel *lbl = [CCMenuItemLabel itemWithLabel:lbl_Home target:menu selector:@selector(resumeClicked)];
     
     CCLabelTTF *lbl_Cheat = [CCLabelTTF labelWithString:@"Cheat" fontName:@"verdana" fontSize:25];
     [lbl_Cheat setColor:ccc3(255,255,255)];
     [lbl_Cheat setOpacity:0];
-    
-    CCMenuItemLabel *lbl = [CCMenuItemLabel itemWithLabel:lbl_Home target:menu selector:@selector(resumeClicked)];
     CCMenuItemLabel *lbl2 = [CCMenuItemLabel itemWithLabel:lbl_Cheat target:menu selector:@selector(resumeClicked)];
+    
     CCMenu *mnu = [CCMenu menuWithItems:lbl,lbl2,nil];
+    
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     [mnu setPosition:ccp(winSize.width/2,winSize.height/2)];
     [mnu alignItemsVertically];

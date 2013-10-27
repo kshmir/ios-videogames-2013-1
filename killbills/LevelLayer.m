@@ -27,6 +27,8 @@
     
     int score;
     
+    int lives;
+    
     int multiplier;
     
     double lastHitTime;
@@ -218,10 +220,9 @@
         [[[self menu] menu] setVisible:NO];
        
         self->lastHitTime = CACurrentMediaTime();
+        self->lives = 5;
         
-        NSArray * data = @[@[@"monster", @"projectile"]];
-        
-        _collisionDetector = [KBCollisionDetector createWithRelations:data];
+        _collisionDetector = [KBCollisionDetector createWithRelations:@[@[@"monster", @"projectile"]]];
         
         [self schedule:@selector(generateMonsters:) interval:1.0];
         [self schedule:@selector(update:)];

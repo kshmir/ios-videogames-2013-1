@@ -59,6 +59,12 @@
 		098E2284181A183500178179 /* enemies-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 098E227E181A183500178179 /* enemies-ipadhd.png */; };
 		098E2285181A183500178179 /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 098E227F181A183500178179 /* enemies.plist */; };
 		098E2286181A183500178179 /* enemies.png in Resources */ = {isa = PBXBuildFile; fileRef = 098E2280181A183500178179 /* enemies.png */; };
+		099DC953181DA7D00015D30A /* live-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 099DC94D181DA7D00015D30A /* live-hd.plist */; };
+		099DC954181DA7D00015D30A /* live-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 099DC94E181DA7D00015D30A /* live-hd.png */; };
+		099DC955181DA7D00015D30A /* live-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 099DC94F181DA7D00015D30A /* live-ipadhd.plist */; };
+		099DC956181DA7D00015D30A /* live-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 099DC950181DA7D00015D30A /* live-ipadhd.png */; };
+		099DC957181DA7D00015D30A /* live.plist in Resources */ = {isa = PBXBuildFile; fileRef = 099DC951181DA7D00015D30A /* live.plist */; };
+		099DC958181DA7D00015D30A /* live.png in Resources */ = {isa = PBXBuildFile; fileRef = 099DC952181DA7D00015D30A /* live.png */; };
 		09A30C771819DDE9000F5C84 /* spinner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C751819DDE9000F5C84 /* spinner.plist */; };
 		09A30C781819DDE9000F5C84 /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A30C761819DDE9000F5C84 /* spinner.png */; };
 		09A3D3CC181780390067546A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A3D3CB181780390067546A /* SenTestingKit.framework */; };
@@ -167,6 +173,12 @@
 		098E227E181A183500178179 /* enemies-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "enemies-ipadhd.png"; path = "Resources/enemies-ipadhd.png"; sourceTree = "<group>"; };
 		098E227F181A183500178179 /* enemies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = enemies.plist; path = Resources/enemies.plist; sourceTree = "<group>"; };
 		098E2280181A183500178179 /* enemies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemies.png; path = Resources/enemies.png; sourceTree = "<group>"; };
+		099DC94D181DA7D00015D30A /* live-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "live-hd.plist"; path = "Resources/live-hd.plist"; sourceTree = "<group>"; };
+		099DC94E181DA7D00015D30A /* live-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "live-hd.png"; path = "Resources/live-hd.png"; sourceTree = "<group>"; };
+		099DC94F181DA7D00015D30A /* live-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "live-ipadhd.plist"; path = "Resources/live-ipadhd.plist"; sourceTree = "<group>"; };
+		099DC950181DA7D00015D30A /* live-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "live-ipadhd.png"; path = "Resources/live-ipadhd.png"; sourceTree = "<group>"; };
+		099DC951181DA7D00015D30A /* live.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = live.plist; path = Resources/live.plist; sourceTree = "<group>"; };
+		099DC952181DA7D00015D30A /* live.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = live.png; path = Resources/live.png; sourceTree = "<group>"; };
 		09A30C751819DDE9000F5C84 /* spinner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = spinner.plist; path = Resources/spinner.plist; sourceTree = "<group>"; };
 		09A30C761819DDE9000F5C84 /* spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner.png; path = Resources/spinner.png; sourceTree = "<group>"; };
 		09A3D3CA181780390067546A /* spectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,6 +330,12 @@
 		09A90A2D18139A2B00CE346C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				099DC94D181DA7D00015D30A /* live-hd.plist */,
+				099DC94E181DA7D00015D30A /* live-hd.png */,
+				099DC94F181DA7D00015D30A /* live-ipadhd.plist */,
+				099DC950181DA7D00015D30A /* live-ipadhd.png */,
+				099DC951181DA7D00015D30A /* live.plist */,
+				099DC952181DA7D00015D30A /* live.png */,
 				092084E4181C876500450C41 /* particle.pex */,
 				092084E5181C876500450C41 /* particle.plist */,
 				092084E6181C876500450C41 /* texture.png */,
@@ -535,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				098E2282181A183500178179 /* enemies-hd.png in Resources */,
+				099DC957181DA7D00015D30A /* live.plist in Resources */,
 				092084CF181C4F6500450C41 /* Icon@2x.png in Resources */,
 				09208499181C126200450C41 /* jobs-hd.png in Resources */,
 				092084E7181C876500450C41 /* particle.pex in Resources */,
@@ -556,9 +575,11 @@
 				092084C1181C4F6500450C41 /* Default-Landscape~ipad.png in Resources */,
 				092084CD181C4F6500450C41 /* Icon-Small@2x.png in Resources */,
 				092084E8181C876500450C41 /* particle.plist in Resources */,
+				099DC953181DA7D00015D30A /* live-hd.plist in Resources */,
 				09A30C781819DDE9000F5C84 /* spinner.png in Resources */,
 				092084CB181C4F6500450C41 /* Icon-Small-50.png in Resources */,
 				0920849D181C126200450C41 /* jobs.png in Resources */,
+				099DC955181DA7D00015D30A /* live-ipadhd.plist in Resources */,
 				092084C3181C4F6500450C41 /* Default@2x.png in Resources */,
 				098E2283181A183500178179 /* enemies-ipadhd.plist in Resources */,
 				09F5312F1813959800CC9665 /* InfoPlist.strings in Resources */,
@@ -567,11 +588,13 @@
 				0920849B181C126200450C41 /* jobs-ipadhd.png in Resources */,
 				098E2284181A183500178179 /* enemies-ipadhd.png in Resources */,
 				092084CA181C4F6500450C41 /* Icon-72.png in Resources */,
+				099DC956181DA7D00015D30A /* live-ipadhd.png in Resources */,
 				09A90A2C18139A2200CE346C /* projectile.png in Resources */,
 				092084D8181C4F6500450C41 /* pause.png in Resources */,
 				09A90A3918139A3800CE346C /* Default-Landscape~ipad.png in Resources */,
 				092084D7181C4F6500450C41 /* jobs.png in Resources */,
 				092084C6181C4F6500450C41 /* enemies-ipadhd.plist in Resources */,
+				099DC954181DA7D00015D30A /* live-hd.png in Resources */,
 				098E2281181A183500178179 /* enemies-hd.plist in Resources */,
 				09A90A2B18139A2200CE346C /* projectile-hd.png in Resources */,
 				09A90A3E18139A3800CE346C /* Icon-Small.png in Resources */,
@@ -584,6 +607,7 @@
 				092084DA181C4F6500450C41 /* spinner.png in Resources */,
 				09A30C771819DDE9000F5C84 /* spinner.plist in Resources */,
 				092084CE181C4F6500450C41 /* Icon.png in Resources */,
+				099DC958181DA7D00015D30A /* live.png in Resources */,
 				09A90A3C18139A3800CE346C /* Icon-72.png in Resources */,
 				09A90A2918139A2200CE346C /* player-hd.png in Resources */,
 				098E2286181A183500178179 /* enemies.png in Resources */,
