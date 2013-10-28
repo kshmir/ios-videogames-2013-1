@@ -21,5 +21,7 @@
 
 - (void) setScore: (int) score;
 
+- (void) setLives: (int) lives;
+
 + (KBGUI *) create: (LevelLayer *) parent;
 @end
