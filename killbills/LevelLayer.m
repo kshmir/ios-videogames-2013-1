@@ -31,6 +31,8 @@
     
     int multiplier;
     
+    int monstersToKill;
+    
     double lastHitTime;
     
     double projectileStartTime;
@@ -51,10 +53,17 @@
     [self addChild: [content sprite]];
 }
 
+- (void) showGameOver {
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
+}
+
 - (void)prepareMonster:(KBMonster *)kbmonster {
     [kbmonster move: ^(CCNode *node) {
         [_collisionDetector unregisterObject:kbmonster key:@"monster"];
         [node removeFromParentAndCleanup:YES];
+        
+        lives--;
+        [_gui setLives:lives];
     }];
     
     [self addObject:kbmonster];
@@ -166,6 +175,13 @@
     [self addChild: el z:10];
 }
 
+- (void) decreaseMonstersKilled {
+    self->monstersToKill--;
+    if (self->monstersToKill == 0) {
+       	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
+    }
+}
+
 - (void)update:(ccTime)dt {
    
     [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
@@ -191,7 +207,9 @@
                 return NO;
             }
         }
+        
         [self removeChild:[gameObject sprite] cleanup:YES];
+        [self decreaseMonstersKilled];
         return YES;
     }];
     
@@ -220,7 +238,9 @@
         [[[self menu] menu] setVisible:NO];
        
         self->lastHitTime = CACurrentMediaTime();
+        
         self->lives = 5;
+        self->monstersToKill = 30;
         
         _collisionDetector = [KBCollisionDetector createWithRelations:@[@[@"monster", @"projectile"]]];
         

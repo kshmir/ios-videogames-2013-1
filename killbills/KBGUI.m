@@ -14,6 +14,7 @@
     CCNode * _gui;
     LevelLayer * _parent;
     CCLabelTTF * _scoreLabel;
+    CCLabelTTF * _levelLabel;
 }
 
 - (CCNode *) gui {
@@ -28,6 +29,11 @@
 
 - (void) setScore: (int) score {
     [self->_scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+}
+
+
+- (void) setLives: (int) lives {
+    [self->_levelLabel setString:[NSString stringWithFormat:@"x %d", lives]];
 }
 
 
@@ -46,7 +52,7 @@
     
     CCSprite * live = [CCSprite spriteWithFile:@"live.png"];
     [live setScale: 0.5];
-    CCLabelTTF * liveCount = [CCLabelTTF labelWithString:@"x 3" fontName:@"Verdana" fontSize:14.0];
+    CCLabelTTF * liveCount = [CCLabelTTF labelWithString:@"x 5" fontName:@"Verdana" fontSize:14.0];
     [liveCount setColor:ccc3(0,0,0)];
     
     [liveCount setPosition:ccp(winSize.width / 2 + [live contentSize].width / 2,
@@ -75,7 +81,8 @@
     [parent addChild:scoreText];
     [parent addChild:live];
     [parent addChild:liveCount];
-   
+  
+    gui->_levelLabel = liveCount;
     gui->_scoreLabel = scoreText;
     gui->_gui = menu;
     
