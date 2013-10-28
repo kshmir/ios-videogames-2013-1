@@ -53,6 +53,7 @@
     [self addChild: [content sprite]];
 }
 
+
 - (void) showGameOver {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
 }
@@ -95,8 +96,31 @@
     }
 }
 
+-(void) maybeAddLive {
+    double r = (rand() * 1.0 / RAND_MAX) * (10);
+    
+    if (r > 9) {
+        KBLive * live = [KBLive create];
+        
+        [live setSpeed:100];
+        
+        [live move: ^(CCNode *node) {
+            [_collisionDetector unregisterObject:live key:@"live"];
+            [node removeFromParentAndCleanup:YES];
+            
+            lives--;
+            [_gui setLives:lives];
+        }];
+        
+        [self addObject:live];
+        
+        [_collisionDetector registerObject:live key:@"live"];
+    }
+}
+
 -(void) generateMonsters:(ccTime)dt {
     [self addMonster];
+    [self maybeAddLive];
 }
 
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -185,6 +209,12 @@
 - (void)update:(ccTime)dt {
    
     [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
+        
+        if ([key isEqual:@"live"]) {
+            lives++;
+            [_gui setLives:lives];
+        }
+        
         if ([key isEqual:@"monster"]) {
             NSTimeInterval newInterval = CACurrentMediaTime();
             NSTimeInterval difference = newInterval - self->lastHitTime;
@@ -242,7 +272,7 @@
         self->lives = 5;
         self->monstersToKill = 30;
         
-        _collisionDetector = [KBCollisionDetector createWithRelations:@[@[@"monster", @"projectile"]]];
+        _collisionDetector = [KBCollisionDetector createWithRelations:@[@[@"monster", @"projectile"],@[@"live", @"projectile"]]];
         
         [self schedule:@selector(generateMonsters:) interval:1.0];
         [self schedule:@selector(update:)];

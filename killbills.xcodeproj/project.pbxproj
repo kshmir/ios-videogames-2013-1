@@ -100,6 +100,7 @@
 		09F531311813959800CC9665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531301813959800CC9665 /* main.m */; };
 		09F531351813959800CC9665 /* KBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F531341813959800CC9665 /* KBAppDelegate.m */; };
 		09F531371813959800CC9665 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F531361813959800CC9665 /* Images.xcassets */; };
+		09F91D9A181EF46D00C439A1 /* KBLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F91D99181EF46D00C439A1 /* KBLive.m */; };
 		339FA63B32354AA1BF015308 /* libPods-killbills.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF3F53E47E1428485D94AE8 /* libPods-killbills.a */; };
 		A2A30C2E72C7446A92B8BAAE /* libPods-spectaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC91BA528A0D4023A18AFA79 /* libPods-spectaTests.a */; };
 /* End PBXBuildFile section */
@@ -228,6 +229,8 @@
 		09F531331813959800CC9665 /* KBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBAppDelegate.h; sourceTree = "<group>"; };
 		09F531341813959800CC9665 /* KBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBAppDelegate.m; sourceTree = "<group>"; };
 		09F531361813959800CC9665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		09F91D98181EF46D00C439A1 /* KBLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBLive.h; sourceTree = "<group>"; };
+		09F91D99181EF46D00C439A1 /* KBLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBLive.m; sourceTree = "<group>"; };
 		7FA70780C1434C649A58989A /* Pods-spectaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spectaTests.xcconfig"; path = "Pods/Pods-spectaTests.xcconfig"; sourceTree = "<group>"; };
 		9DF3F53E47E1428485D94AE8 /* libPods-killbills.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-killbills.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F856FA1D6D43E5B3DA318C /* Pods-killbills.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-killbills.xcconfig"; path = "Pods/Pods-killbills.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 		097F35401813BC9200EBEBD0 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				09F91D98181EF46D00C439A1 /* KBLive.h */,
+				09F91D99181EF46D00C439A1 /* KBLive.m */,
 				0920848F181C011600450C41 /* KBPlayer.h */,
 				09208490181C011600450C41 /* KBPlayer.m */,
 				09F30828181B2D99005E5ACB /* KBBaseNode.h */,
@@ -711,6 +716,7 @@
 				0969CC0F1819E5B700B5043F /* KBAnimate.m in Sources */,
 				09F531311813959800CC9665 /* main.m in Sources */,
 				092084A3181C4E7C00450C41 /* KBGUI.m in Sources */,
+				09F91D9A181EF46D00C439A1 /* KBLive.m in Sources */,
 				092794221818BE23002AF139 /* KBCollisionDetector.m in Sources */,
 				097F35521813D0CE00EBEBD0 /* KBGameMovement.m in Sources */,
 				09F3082A181B2D99005E5ACB /* KBBaseNode.m in Sources */,

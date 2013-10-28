@@ -78,7 +78,6 @@
 							preserveBackbuffer:NO
 									sharegroup:nil
 								 multiSampling:NO
-
 							   numberOfSamples:0];
   
     [self->navController_ setNavigationBarHidden: YES animated:NO];
@@ -92,7 +91,7 @@
 	[director_ setDisplayStats:YES];
 	
 	// set FPS at 60
-	[director_ setAnimationInterval:1.0/60];
+	[director_ setAnimationInterval:1.0/15];
 	
 	// attach the openglView to the director
 	[director_ setView:glView];
@@ -108,13 +107,14 @@
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change this setting at any time.
-	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
 	
 	// If the 1st suffix is not found and if fallback is enabled then fallback suffixes are going to searched. If none is found, it will try with the name without suffix.
 	// On iPad HD  : "-ipadhd", "-ipad",  "-hd"
 	// On iPad     : "-ipad", "-hd"
 	// On iPhone HD: "-hd"
 	CCFileUtils *sharedFileUtils = [CCFileUtils sharedFileUtils];
+    
 	[sharedFileUtils setEnableFallbackSuffixes:NO];				// Default: NO. No fallback suffixes are going to be used
 	[sharedFileUtils setiPhoneRetinaDisplaySuffix:@"-hd"];		// Default on iPhone RetinaDisplay is "-hd"
 	[sharedFileUtils setiPadSuffix:@"-ipad"];					// Default on iPad is "ipad"

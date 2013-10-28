@@ -20,6 +20,7 @@
 #import "KBPlayer.h"
 #import "KBMenu.h"
 #import "KBGUI.h"
+#import "KBLive.h"
 
 // HelloWorldLayer
 @interface LevelLayer : CCLayerColor

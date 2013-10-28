@@ -76,9 +76,15 @@
 
 - (void) explode {
     if ([[self sprite] tag] != KBO_DEAD) {
-        [owner animateExplosion:self];
-        [owner removeObject: self];
-        [owner addChildMonster];
+        @try {
+            [owner animateExplosion:self];
+            [owner removeObject: self];
+            [owner addChildMonster];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
     }
 }
 
