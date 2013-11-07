@@ -111,6 +111,17 @@
     [firstElementsToDelete release];
 }
 
+- (void) dealloc {
+    for (KBCollisionRelation * relation in relations) {
+        for (id<KBGameObject> object in [items objectForKey: [relation firstKey]]) {
+            [[object sprite] setTag:KBO_DEAD];
+        };
+        for (id<KBGameObject> object in [items objectForKey: [relation lastKey]]) {
+            [[object sprite] setTag:KBO_DEAD];
+        };
+    }
+    [super dealloc];
+}
 
 @end
 

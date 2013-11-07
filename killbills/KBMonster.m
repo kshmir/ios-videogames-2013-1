@@ -74,16 +74,23 @@
     return monster;
 }
 
+- (void) setLevel: (int) level {
+    
+}
+
 - (void) explode {
-    if ([[self sprite] tag] != KBO_DEAD) {
+    if ([self sprite] != nil && [[self sprite] tag] != KBO_DEAD) {
         @try {
+            // Didn't know how to know if the object had already been ARC'd
             [owner animateExplosion:self];
             [owner removeObject: self];
             [owner addChildMonster];
         }
         @catch (NSException *exception) {
+            [[self sprite] setTag:KBO_DEAD];
         }
         @finally {
+            [[self sprite] setTag:KBO_DEAD];
         }
     }
 }

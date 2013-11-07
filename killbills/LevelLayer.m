@@ -29,6 +29,8 @@
     
     int lives;
     
+    int levelNumber;
+    
     int multiplier;
     
     int monstersToKill;
@@ -41,10 +43,25 @@
 
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
+
++(CCScene *) sceneFromLevelLayer: (LevelLayer *) aLayer
+{
+	CCScene *scene = [CCScene node];
+	LevelLayer *layer = [LevelLayer node];
+    layer->levelNumber = aLayer->levelNumber + 1;
+    layer->score = aLayer->score;
+    [layer->_gui setScore: layer->score];
+    [layer->_gui setLevelNumber: layer->levelNumber];
+	[scene addChild: layer];
+	return scene;
+}
+
 +(CCScene *) scene
 {
 	CCScene *scene = [CCScene node];
 	LevelLayer *layer = [LevelLayer node];
+    layer->levelNumber = layer->levelNumber + 1;
+    [layer->_gui setLevelNumber: layer->levelNumber];
 	[scene addChild: layer];
 	return scene;
 }
@@ -62,9 +79,8 @@
     [kbmonster move: ^(CCNode *node) {
         [_collisionDetector unregisterObject:kbmonster key:@"monster"];
         [node removeFromParentAndCleanup:YES];
-        
-        lives--;
-        [_gui setLives:lives];
+        [[self scheduler] unscheduleAllForTarget:kbmonster];
+        [self setLives:lives - 1];
     }];
     
     [self addObject:kbmonster];
@@ -83,7 +99,7 @@
     } else {
         kbmonster = [KBMonster create];
     }
-    [kbmonster setSpeedBetween:50 andBetween:200];
+    [kbmonster setSpeedBetween:(50 + self->levelNumber * 10) andBetween:(200 + self->levelNumber * 15)];
     
     [self prepareMonster:kbmonster];
 }
@@ -91,8 +107,18 @@
 - (void) addChildMonster {
     for (int i = 0; i < 10; i++) {
         KBMonster * kbmonster = [KBMonster create];
-        [kbmonster setSpeedBetween:25 andBetween:75];
+        [kbmonster setSpeedBetween:(25 + (self->levelNumber - 1) * 8)
+                        andBetween:(75 + (self->levelNumber - 1) * 12)];
         [self prepareMonster:kbmonster];
+    }
+}
+
+- (void) setLives: (int) liv {
+    self->lives = liv;
+    [_gui setLives:liv];
+    
+    if (liv == 0) {
+        [self showGameOver];
     }
 }
 
@@ -108,8 +134,7 @@
             [_collisionDetector unregisterObject:live key:@"live"];
             [node removeFromParentAndCleanup:YES];
             
-            lives--;
-            [_gui setLives:lives];
+            [self setLives:lives - 1];
         }];
         
         [self addObject:live];
@@ -157,7 +182,6 @@
     
     if (offset.x <= 0) return;
     
-    
     KBTouchMovement * movement = [KBTouchMovement allocWithMovingObject:projectile andTouchOffset: offset];
     
     [projectile setMovement: movement];
@@ -171,7 +195,7 @@
     
     [KBAnimate increaseScale:projectile by:sizeRate withDuration:[movement duration]];
     
-    [self scheduleOnce:@selector(onAnimationEnded) delay:0.25];
+    [self scheduleOnce:@selector(onAnimationEnded) delay:1];
     
     [self->_player launchProjectile];
     
@@ -199,10 +223,15 @@
     [self addChild: el z:10];
 }
 
+
+- (void) moveToLevel: (int) level {
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer sceneFromLevelLayer:self]]];
+}
+
 - (void) decreaseMonstersKilled {
     self->monstersToKill--;
     if (self->monstersToKill == 0) {
-       	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
+        [self moveToLevel:self->levelNumber + 1];
     }
 }
 
@@ -211,8 +240,7 @@
     [_collisionDetector detectCollisions: ^(id<KBGameObject> gameObject, NSString * key) {
         
         if ([key isEqual:@"live"]) {
-            lives++;
-            [_gui setLives:lives];
+            [self setLives: lives + 1];
         }
         
         if ([key isEqual:@"monster"]) {
@@ -226,12 +254,13 @@
             }
             
             self->lastHitTime = newInterval;
-            [self incrementScoreBy:(100 * (multiplier + 1) * (multiplier + 1))];
+            [self incrementScoreBy:(100 * (multiplier * 0.2 + 1) * (multiplier * 0.2 + 1))];
             
             [self animateExplosion:gameObject];
             
             [[gameObject sprite] setTag:KBO_DEAD];
             [self decreaseMonstersKilled];
+            [[self scheduler] unscheduleAllForTarget:gameObject];
         }
         if ([key isEqual:@"projectile"]) {
             if ([gameObject special]) {
@@ -250,7 +279,6 @@
 }
 
 
-// on "init" you need to initialize your instance
 -(id) init
 {
     if ((self = [super initWithColor:ccc4(255,255,255,255)])) {
@@ -274,11 +302,17 @@
         
         _collisionDetector = [KBCollisionDetector createWithRelations:@[@[@"monster", @"projectile"],@[@"live", @"projectile"]]];
         
-        [self schedule:@selector(generateMonsters:) interval:1.0];
+        [self schedule:@selector(generateMonsters:) interval:1];
         [self schedule:@selector(update:)];
         
     }
     
 	return self;
+}
+
+- (void) dealloc {
+    [[self scheduler] unscheduleAllForTarget:self];
+    [_collisionDetector dealloc];
+    [super dealloc];
 }
 @end

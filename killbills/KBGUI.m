@@ -14,6 +14,7 @@
     CCNode * _gui;
     LevelLayer * _parent;
     CCLabelTTF * _scoreLabel;
+    CCLabelTTF * _livesLabel;
     CCLabelTTF * _levelLabel;
 }
 
@@ -31,9 +32,13 @@
     [self->_scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
 }
 
+- (void) setLevelNumber: (int) levelNumber {
+    [self->_levelLabel setString:[NSString stringWithFormat:@"Nivel: %d", levelNumber]];
+}
+
 
 - (void) setLives: (int) lives {
-    [self->_levelLabel setString:[NSString stringWithFormat:@"x %d", lives]];
+    [self->_livesLabel setString:[NSString stringWithFormat:@"x %d", lives]];
 }
 
 
@@ -55,6 +60,13 @@
     CCLabelTTF * liveCount = [CCLabelTTF labelWithString:@"x 5" fontName:@"Verdana" fontSize:14.0];
     [liveCount setColor:ccc3(0,0,0)];
     
+    
+    CCLabelTTF * levelNumber = [CCLabelTTF labelWithString:@"0" fontName:@"Verdana" fontSize:14.0];
+    [levelNumber setColor:ccc3(0,0,0)];
+    
+    [levelNumber setPosition:ccp(winSize.width / 2 + [live contentSize].width / 2 + 100,
+                               (winSize.height) - [live contentSize].height * 0.75)];
+    
     [liveCount setPosition:ccp(winSize.width / 2 + [live contentSize].width / 2,
                               (winSize.height) - [live contentSize].height * 0.75)];
     [live setPosition:ccp(winSize.width / 2 - [live contentSize].width / 4,
@@ -74,15 +86,18 @@
     
     menu.position = CGPointZero;
     
-    [scoreText setZOrder:100];
-    [live      setZOrder:100];
-    [liveCount setZOrder:100];
+    [scoreText   setZOrder:100];
+    [live        setZOrder:100];
+    [liveCount   setZOrder:100];
+    [levelNumber setZOrder:100];
     
     [parent addChild:scoreText];
     [parent addChild:live];
     [parent addChild:liveCount];
+    [parent addChild:levelNumber];
   
-    gui->_levelLabel = liveCount;
+    gui->_livesLabel = liveCount;
+    gui->_levelLabel = levelNumber;
     gui->_scoreLabel = scoreText;
     gui->_gui = menu;
     

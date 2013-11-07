@@ -31,6 +31,6 @@
 -(void) removeObject: (id<KBGameObject>) node;
 
 - (void) addChildMonster;
-- (void)animateExplosion:(id)gameObject;
+- (void) animateExplosion:(id)gameObject;
 -(KBMenu *) menu;
 @end
