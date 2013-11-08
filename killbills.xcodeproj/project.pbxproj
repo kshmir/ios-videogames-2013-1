@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0917A9E8182C5926004B3F2F /* game_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 0917A9E7182C5926004B3F2F /* game_over.png */; };
 		09208491181C011600450C41 /* KBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09208490181C011600450C41 /* KBPlayer.m */; };
 		09208498181C126200450C41 /* jobs-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09208492181C126100450C41 /* jobs-hd.plist */; };
 		09208499181C126200450C41 /* jobs-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 09208493181C126100450C41 /* jobs-hd.png */; };
@@ -116,6 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0917A9E7182C5926004B3F2F /* game_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_over.png; path = Resources/game_over.png; sourceTree = "<group>"; };
 		0920848F181C011600450C41 /* KBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPlayer.h; sourceTree = "<group>"; };
 		09208490181C011600450C41 /* KBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPlayer.m; sourceTree = "<group>"; };
 		09208492181C126100450C41 /* jobs-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "jobs-hd.plist"; path = "Resources/jobs-hd.plist"; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 		09A90A2D18139A2B00CE346C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0917A9E7182C5926004B3F2F /* game_over.png */,
 				099DC94D181DA7D00015D30A /* live-hd.plist */,
 				099DC94E181DA7D00015D30A /* live-hd.png */,
 				099DC94F181DA7D00015D30A /* live-ipadhd.plist */,
@@ -604,6 +607,7 @@
 				09A90A2B18139A2200CE346C /* projectile-hd.png in Resources */,
 				09A90A3E18139A3800CE346C /* Icon-Small.png in Resources */,
 				09A90A2A18139A2200CE346C /* player.png in Resources */,
+				0917A9E8182C5926004B3F2F /* game_over.png in Resources */,
 				09A90A2818139A2200CE346C /* monster.png in Resources */,
 				092084E9181C876500450C41 /* texture.png in Resources */,
 				098E2285181A183500178179 /* enemies.plist in Resources */,

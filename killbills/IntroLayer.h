@@ -19,3 +19,14 @@
 +(CCScene *) scene;
 
 @end
+
+
+// HelloWorldLayer
+@interface GameOverLayer : CCLayer
+{
+}
+
+// returns a CCScene that contains the HelloWorldLayer as the only child
++(CCScene *) scene;
+
+@end

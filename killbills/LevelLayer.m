@@ -10,6 +10,7 @@
 #include <OpenGLES/ES1/gl.h>
 // Import the interfaces
 #import "LevelLayer.h"
+#import "IntroLayer.h"
 
 
 // Needed to obtain the Navigation Controller
@@ -72,7 +73,7 @@
 
 
 - (void) showGameOver {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
+    [[CCDirector sharedDirector] replaceScene:[GameOverLayer scene]];
 }
 
 - (void)prepareMonster:(KBMonster *)kbmonster {
@@ -133,7 +134,6 @@
         [live move: ^(CCNode *node) {
             [_collisionDetector unregisterObject:live key:@"live"];
             [node removeFromParentAndCleanup:YES];
-            
             [self setLives:lives - 1];
         }];
         
