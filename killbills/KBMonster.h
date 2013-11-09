@@ -13,11 +13,20 @@
 #import "KBBaseNode.h"
 #import "LevelLayer.h"
 
+#define KBM_NORMAL  0
+#define KBM_BERSERK 1
+#define KBM_SPEEDER 2
+#define KBM_BOSS    3
+
 @class LevelLayer;
 @interface KBMonster : KBBaseNode <KBMovingObject>
 
 -(void) setSpeedBetween: (double) speed andBetween: (double) topSpeed;
 
+@property (nonatomic) int liveCount;
+
+- (int) type;
++(KBMonster *) createBoss: (LevelLayer *) owner;
 +(KBMonster *) createBerserk: (LevelLayer *) owner;
 +(KBMonster *) createSpeeder: (LevelLayer *) owner;
 +(KBMonster *) create;

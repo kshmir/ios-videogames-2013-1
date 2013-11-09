@@ -18,19 +18,21 @@
 #import "KBProjectile.h"
 #import "KBCollisionDetector.h"
 #import "KBPlayer.h"
-#import "KBMenu.h"
 #import "KBGUI.h"
 #import "KBLive.h"
 
+@class KBMenu;
 // HelloWorldLayer
 @interface LevelLayer : CCLayerColor
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 
+-(void) increaseLevel;
 -(void) removeObject: (id<KBGameObject>) node;
 
 - (void) addChildMonster;
+- (void) addChildMonsterBoss;
 - (void) animateExplosion:(id)gameObject;
--(KBMenu *) menu;
+- (KBMenu *) menu;
 @end

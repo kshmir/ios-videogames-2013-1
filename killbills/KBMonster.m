@@ -17,13 +17,11 @@
     int type;
 }
 
-#define KBM_NORMAL 0
-#define KBM_BERSERK 1
-#define KBM_SPEEDER 2
 
 @synthesize speed;
 @synthesize movement;
 @synthesize sprite;
+@synthesize liveCount;
 
 +(KBMonster *) create {
     KBMonster * monster = [[KBMonster alloc] init];
@@ -56,6 +54,30 @@
     return monster;
 }
 
++(KBMonster *) createBoss: (LevelLayer *) owner {
+    KBMonster * monster = [KBMonster create];
+    
+    monster->type = KBM_BOSS;
+    monster->owner = owner;
+    monster.liveCount = 30;
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    int minY = monster.size.height / 2;
+    int maxY = winSize.height - monster.size.height/2;
+    monster.sprite.position = ccp(winSize.width + monster.size.width/2, (maxY + minY) / 2);
+    [[monster-> animatedSprite sprite] setScale:2.5];
+    
+    [[monster->animatedSprite sprite] runAction:[CCTintTo actionWithDuration:10 red:128 green:0 blue:0]];
+    
+    [[owner scheduler] scheduleSelector:@selector(explode)
+                              forTarget:monster
+                               interval:10
+                                 repeat:0
+                                  delay:0
+                                 paused:NO];
+    
+    return monster;
+}
+
 +(KBMonster *) createBerserk: (LevelLayer *) owner {
     KBMonster * monster = [KBMonster create];
     
@@ -74,6 +96,10 @@
     return monster;
 }
 
+- (int) type {
+    return self->type;
+}
+
 - (void) setLevel: (int) level {
     
 }
@@ -81,10 +107,14 @@
 - (void) explode {
     if ([self sprite] != nil && [[self sprite] tag] != KBO_DEAD) {
         @try {
-            // Didn't know how to know if the object had already been ARC'd
             [owner animateExplosion:self];
             [owner removeObject: self];
-            [owner addChildMonster];
+            if (self->type != KBM_BOSS) {
+               [owner addChildMonster];
+            }
+            else {
+               [owner addChildMonsterBoss];
+            }
         }
         @catch (NSException *exception) {
             [[self sprite] setTag:KBO_DEAD];
@@ -106,6 +136,9 @@
 - (void) move:(void (^)(CCNode *))block {
     if (type == KBM_BERSERK) {
         self.speed /= 10;
+    }
+    if (type == KBM_BOSS) {
+        self.speed /= 50;
     }
     [super move: block];
 }

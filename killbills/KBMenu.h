@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@class LevelLayer;
+
 @interface KBMenu : NSObject
 -(CCMenu *) menu;
 
 -(void) resumeClicked;
 
 -(void) toggle;
-+(KBMenu *) create: (CCLayer *) forScene;
++(KBMenu *) create: (LevelLayer *) forScene;
 @end

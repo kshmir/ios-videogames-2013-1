@@ -33,7 +33,7 @@
 }
 
 - (void) setLevelNumber: (int) levelNumber {
-    [self->_levelLabel setString:[NSString stringWithFormat:@"Nivel: %d", levelNumber]];
+    [self->_levelLabel setString:[NSString stringWithFormat:@"Level: %d", levelNumber]];
 }
 
 

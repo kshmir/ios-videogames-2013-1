@@ -7,10 +7,11 @@
 //
 
 #import "KBMenu.h"
+#import "LevelLayer.h"
 
 @implementation KBMenu {
-    __strong CCMenu * menu;
-    __strong CCLayer * scene;
+    CCMenu * menu;
+    LevelLayer * scene;
     bool paused;
 }
 
@@ -41,7 +42,12 @@
     self->paused = !self->paused;
 }
 
-+(KBMenu *) create: (CCLayer *) forLayer {
+-(void) doCheat {
+    [self toggle];
+    [self->scene increaseLevel];
+}
+
++(KBMenu *) create: (LevelLayer *) forLayer {
     KBMenu * menu = [[KBMenu alloc] init];
     
     CCLabelTTF *lbl_Home = [CCLabelTTF labelWithString:@"Resume" fontName:@"verdana" fontSize:25];
@@ -51,7 +57,7 @@
     CCLabelTTF *lbl_Cheat = [CCLabelTTF labelWithString:@"Cheat" fontName:@"verdana" fontSize:25];
     [lbl_Cheat setColor:ccc3(255,255,255)];
     [lbl_Cheat setOpacity:0];
-    CCMenuItemLabel *lbl2 = [CCMenuItemLabel itemWithLabel:lbl_Cheat target:menu selector:@selector(resumeClicked)];
+    CCMenuItemLabel *lbl2 = [CCMenuItemLabel itemWithLabel:lbl_Cheat target:menu selector:@selector(doCheat)];
     
     CCMenu *mnu = [CCMenu menuWithItems:lbl,lbl2,nil];
     

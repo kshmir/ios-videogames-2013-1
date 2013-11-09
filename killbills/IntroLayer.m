@@ -107,10 +107,13 @@
 	return self;
 }
 
+- (void) restart {
+   	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
+}
+
 -(void) onEnter
 {
 	[super onEnter];
-    
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] ]];
+    [self scheduleOnce:@selector(restart) delay:3.0];
 }
 @end

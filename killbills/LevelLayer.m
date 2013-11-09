@@ -36,12 +36,15 @@
     
     int monstersToKill;
     
+    int monstersSpawned;
+    
     double lastHitTime;
     
     double projectileStartTime;
     BOOL specialProjectile;
 }
 
+const int BOSS_LEVEL = 5;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 
@@ -89,20 +92,33 @@
     [_collisionDetector registerObject:kbmonster key:@"monster"];
 }
 
+- (BOOL) bossLevel {
+    return (self->levelNumber) % BOSS_LEVEL == 0;
+}
+
 - (void) addMonster {
     double r = (rand() * 1.0 / RAND_MAX) * (10);
     
     KBMonster * kbmonster;
-    if (r > 7 && r < 8) {
-        kbmonster = [KBMonster createBerserk: self];
-    } else if (r > 8) {
-        kbmonster = [KBMonster createSpeeder: self];
+    if ([self bossLevel] == NO) {
+        if (r > 7 && r < 8) {
+            kbmonster = [KBMonster createBerserk: self];
+        } else if (r > 8) {
+            kbmonster = [KBMonster createSpeeder: self];
+        } else {
+            kbmonster = [KBMonster create];
+        }
     } else {
-        kbmonster = [KBMonster create];
+        if (self->monstersSpawned > 0) {
+            return;
+        }
+        kbmonster = [KBMonster createBoss: self];
+    
     }
     [kbmonster setSpeedBetween:(50 + self->levelNumber * 10) andBetween:(200 + self->levelNumber * 15)];
     
     [self prepareMonster:kbmonster];
+    self->monstersSpawned++;
 }
 
 - (void) addChildMonster {
@@ -113,6 +129,17 @@
         [self prepareMonster:kbmonster];
     }
 }
+
+
+- (void) addChildMonsterBoss {
+    for (int i = 0; i < 40; i++) {
+        KBMonster * kbmonster = [KBMonster create];
+        [kbmonster setSpeedBetween:(25 + (self->levelNumber) * 50)
+                        andBetween:(75 + (self->levelNumber) * 150)];
+        [self prepareMonster:kbmonster];
+    }
+}
+
 
 - (void) setLives: (int) liv {
     self->lives = liv;
@@ -145,6 +172,7 @@
 
 -(void) generateMonsters:(ccTime)dt {
     [self addMonster];
+    
     [self maybeAddLive];
 }
 
@@ -214,7 +242,7 @@
     [self->_gui setScore: score];
 }
 
-- (void)animateExplosion:(id)gameObject {
+- (void) animateExplosion:(id)gameObject {
     CCParticleSystemQuad * el = [CCParticleSystemQuad particleWithFile:@"particle.plist"];
     [el setBlendFunc:(ccBlendFunc){GL_ZERO,GL_ONE_MINUS_SRC_COLOR}];
     [el setDuration:0.5];
@@ -223,6 +251,9 @@
     [self addChild: el z:10];
 }
 
+- (void) increaseLevel {
+    [self moveToLevel:self->levelNumber + 1];
+}
 
 - (void) moveToLevel: (int) level {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer sceneFromLevelLayer:self]]];
@@ -231,7 +262,7 @@
 - (void) decreaseMonstersKilled {
     self->monstersToKill--;
     if (self->monstersToKill == 0) {
-        [self moveToLevel:self->levelNumber + 1];
+        [self increaseLevel];
     }
 }
 
@@ -246,6 +277,18 @@
         if ([key isEqual:@"monster"]) {
             NSTimeInterval newInterval = CACurrentMediaTime();
             NSTimeInterval difference = newInterval - self->lastHitTime;
+           
+            KBMonster * monster = (KBMonster * ) gameObject;
+            
+            if ([monster type] == KBM_BOSS) {
+                if ([monster liveCount] > 0) {
+                    [monster setLiveCount:[monster liveCount] - 1];
+                    return NO;
+                } else {
+                    self->monstersToKill = 1;
+                    [self decreaseMonstersKilled];
+                }
+            }
             
             if (difference < 2.00) {
                 self->multiplier += 1;
