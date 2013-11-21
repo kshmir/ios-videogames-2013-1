@@ -37,7 +37,6 @@
     int monstersToKill;
     
     int monstersSpawned;
-    
     double lastHitTime;
     
     double projectileStartTime;
@@ -73,7 +72,6 @@ const int BOSS_LEVEL = 5;
 - (void) addObject: (id<KBGameObject>) content {
     [self addChild: [content sprite]];
 }
-
 
 - (void) showGameOver {
     [[CCDirector sharedDirector] replaceScene:[GameOverLayer scene]];
@@ -312,6 +310,7 @@ const int BOSS_LEVEL = 5;
         }
         
         [self removeChild:[gameObject sprite] cleanup:YES];
+        [self decreaseMonstersKilled];
         return YES;
     }];
     
