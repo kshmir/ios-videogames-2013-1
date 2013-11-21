@@ -42,11 +42,6 @@
 }
 
 
-- (void) setLives: (int) lives {
-    [self->_levelLabel setString:[NSString stringWithFormat:@"x %d", lives]];
-}
-
-
 + (KBGUI *) create: (LevelLayer *) parent {
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     KBGUI * gui = [[KBGUI alloc] init];
